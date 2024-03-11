@@ -1,10 +1,11 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Blog from './pages/Blog';
 
 function App() {
   return (
     <div className="App">
-      welcome to blog page
+      <Blog/>
     </div>
   );
 }
