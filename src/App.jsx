@@ -20,7 +20,7 @@ export default function App() {
         { path: 'aboutus', element: <About /> },
         { path: 'contactus', element: <ContactUs /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'blog', element: <Bussiness /> },
+        { path: 'Bussiness', element: <Bussiness /> },
 
       ]
     }
