@@ -134,7 +134,7 @@ function Home() {
               <div className="row g-3">
                 <div className="col-md-4 ">
                   <div className={`${styles.item} item text-center p-4 rounded-4`}>
-                    <i className={`${styles.secondColor} fa-solid fa-pen-ruler fs-4`}></i>
+                    <i className={`${styles.secondColor} fa-solid fa-compass-drafting fs-4`}></i>
                     <h3 className='my-3'>1. Explore</h3>
                     <p>The biggest variety of workspaces near you</p>
                   </div>
