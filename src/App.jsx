@@ -6,7 +6,7 @@ import Home from './components/Home/home.jsx';
 import Blog from './components/blog/Blog.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Notfound from './components/Notfound/notfound.jsx';
-import Forbusiness from './components/ForBusiness/Forbusiness.jsx';
+import Forbusiness from './components/ForBusiness/forbusinessorbusiness';
 import About from './components/AboutUs/about.jsx';
 
 
@@ -21,7 +21,7 @@ export default function App() {
         { path: 'aboutus', element: <About /> },
         { path: 'contactus', element: <ContactUs /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'ForBusiness', element: <Forbusiness /> }
+        { path: 'Forbusiness', element: <Forbusiness /> }
       ]
     }
   ])
