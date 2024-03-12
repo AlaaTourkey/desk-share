@@ -5,10 +5,10 @@ import Footer from "../Footer/Footer";
 
 export default function Masterlayout() {
   return (
-   <>
-   <Navbar/>
-   <Outlet></Outlet>
-   <Footer/>
-   </>
+    <>
+      <Navbar />
+      <Outlet></Outlet>
+      <Footer />
+    </>
   )
 }

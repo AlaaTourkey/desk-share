@@ -1,8 +1,11 @@
 import React from 'react'
 
-export default function forbusiness() {
+export default function Forbusiness() {
   return (
-    <div>forbusiness</div>
+    <>
+    <h1>forbusiness</h1>
+    
+    </>
   )
 }
 

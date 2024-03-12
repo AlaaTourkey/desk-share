@@ -2,3 +2,11 @@ body {
   margin: 0;
   font-family: 'Abril Fatface', cursive !important;
 }
+.nav-link.active{
+  background-color:hsl(192, 24%, 50%) !important;
+  border-radius:10px ;
+  padding-left: 3px;
+  padding-right: 3px;
+  margin-left: 3px;
+  text-align: center;
+  }

@@ -59,44 +59,44 @@ export default function About() {
         </div>
         <p className={styles.p1mission}>Layanan dan Tempat Apartemen Terbaik, Sesuai Impian Anda. Rasakan kenyamanan istimewa di hunian kami.</p>
         <div className='container'>
-        <div className="row ">
-          <div className={`col-md-6  ${styles.vission }`}>
-            <div className= {`py-5 ${styles.inner}`}>
-              <div className="div"></div>
-              <h4>Misi Kami</h4>
-              <hr />
-              <div className="missioncap d-flex  align-items-center">
-                <h2 className={styles.number}>01</h2>
-                <div className={styles.iconbox}>
-                  <h4 >Menghadirkan Kemewahan Berkualitas Tinggi</h4>
-                  <h6>Menyediakan layanan dan tempat apartemen terbaik</h6>
+          <div className="row ">
+            <div className={`col-md-6  ${styles.vission}`}>
+              <div className={`py-5 ${styles.inner}`}>
+                <div className="div"></div>
+                <h4>Misi Kami</h4>
+                <hr />
+                <div className="missioncap d-flex  align-items-center">
+                  <h2 className={styles.number}>01</h2>
+                  <div className={styles.iconbox}>
+                    <h4 >Menghadirkan Kemewahan Berkualitas Tinggi</h4>
+                    <h6>Menyediakan layanan dan tempat apartemen terbaik</h6>
+                  </div>
                 </div>
-              </div>
-              <div className="missioncap d-flex  align-items-center">
-                <h2 className={styles.number}>02</h2>
-                <div className={styles.iconbox}>
-                  <h4>Menghadirkan Kemewahan Berkualitas Tinggi</h4>
-                  <h6>Menyediakan layanan dan tempat apartemen terbaik</h6>
+                <div className="missioncap d-flex  align-items-center">
+                  <h2 className={styles.number}>02</h2>
+                  <div className={styles.iconbox}>
+                    <h4>Menghadirkan Kemewahan Berkualitas Tinggi</h4>
+                    <h6>Menyediakan layanan dan tempat apartemen terbaik</h6>
+                  </div>
                 </div>
-              </div>
-              <div className="missioncap d-flex  align-items-center">
-                <h2 className={styles.number}>03</h2>
-                <div className={styles.iconbox}>
-                  <h4>Menghadirkan Kemewahan Berkualitas Tinggi</h4>
-                  <h6 >Menyediakan layanan dan tempat apartemen terbaik</h6>
+                <div className="missioncap d-flex  align-items-center">
+                  <h2 className={styles.number}>03</h2>
+                  <div className={styles.iconbox}>
+                    <h4>Menghadirkan Kemewahan Berkualitas Tinggi</h4>
+                    <h6 >Menyediakan layanan dan tempat apartemen terbaik</h6>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div className={`col-md-6 ${styles.vission}`}>
-            <div className={`${styles.inner} ${styles.vission1}`}>
-              <h5>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-              <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <p>  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <div className={`col-md-6 ${styles.vission}`}>
+              <div className={`${styles.inner} ${styles.vission1}`}>
+                <h5>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+                <p> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
       {/* ================================================================================================================ */}
@@ -147,7 +147,7 @@ export default function About() {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-md-9 col-12">
+            <div className="col-lg-9 col-12">
               <p className={styles.p5}>Kenapa harus gunakan layanan kami</p>
               <h3 className={styles.hstepwork}>Kami Memberikan Hasil Layanan Terbaik Untuk Apartemen Anda</h3>
               <div className="row">
@@ -179,7 +179,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className={`col-md-3 col-12 ${styles.itemss}`}>
+            <div className={`col-lg-3 col-12 my-3 ${styles.itemss}`}>
               <i className={`fa-solid fa-quote-left ${styles.ICONN}`}></i>
               <h5 className={styles.h5text}>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
               <p className={styles.plist}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
