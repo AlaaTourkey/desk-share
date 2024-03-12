@@ -5,7 +5,7 @@ import Masterlayout from './components/Masterlayout/Masterlayout.jsx';
 import Home from './components/Home/home.jsx';
 import Blog from './components/blog/Blog.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
-import Notfound from './components/Notfound/Notfound.jsx';
+import Notfound from './components/Notfound/notfound.jsx';
 import Forbusiness from './components/ForBusiness/Forbusiness.jsx';
 import About from './components/AboutUs/about.jsx';
 
