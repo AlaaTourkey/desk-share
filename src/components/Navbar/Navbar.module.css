@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.allnav{
+    background-color: rgb(255, 255, 255);
+}
+.buttonnav{
+background-color:hsl(192, 24%, 50%) !important;
+color: white !important;
+
+}
+.logo{
+    width: 200px;
+    height:80px;
+}
+.nav-link.active{
+background-color:hsl(192, 24%, 50%) !important;
+border-radius:10px ;
+margin-left: 3px;
+text-align: center;
+}
+
+.nav-label{
+    text-Shadow: 1.2px 1.2px rgb(139, 133, 133);
+    font-style: italic;
+}

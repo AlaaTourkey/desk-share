@@ -1,0 +1,132 @@
+.footerimg{
+    background-image:url(footer-images/footerimg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    border-radius: 20px;
+   padding: 2rem;
+   color: white;
+   display: flex;
+}
+.center{
+    margin: auto;
+    align-items: center;
+}
+
+.h2footer {
+    font-family: 'Abril Fatface'; 
+
+  }
+  .allfooter{
+    background-color: rgba(98, 146, 158, 1);
+    color: rgba(243, 236, 220, 0.5);
+    padding: 30px;
+    padding-bottom: 0px;
+  }
+  .logo{
+    height: 100px;
+    width: 150px;
+  }
+  .footerp{
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Open Sans';
+    font-weight: 300;
+  }
+  .footertextt{
+    font-family: 'Open Sans';
+    width:70%;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+  .footerbtn{
+    color: white !important;
+    border-radius: 20px !important;
+    background-color:#62929E!important;
+  }
+  .linklabel{
+    font-family: 'Abril Fatface';
+    font-size: 16px;
+  }
+  .linksp,
+  .links p{
+    color: white !important;
+    text-decoration: none;
+  }
+  .footerimg {
+    background-image: url(footer-images/footerimg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    width: 100%;
+    border-radius: 20px;
+    padding: 2rem;
+    color: white;
+    display: flex;
+}
+
+.center {
+    margin: auto;
+    align-items: center;
+}
+
+.h2footer {
+    font-family: 'Abril Fatface';
+}
+
+.allfooter {
+    background-color: rgba(98, 146, 158, 1);
+    color: rgba(243, 236, 220, 0.5);
+    padding: 30px;
+    padding-bottom: 0px;
+}
+
+.logo {
+    height: 100px;
+    width: 150px;
+}
+
+.footerp {
+    color: rgba(255, 255, 255, 0.75);
+    font-family: 'Open Sans';
+    font-weight: 300;
+}
+
+.footertextt {
+    font-family: 'Open Sans';
+    width: 70%;
+    font-weight: 300;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.footerbtn {
+    color: white !important;
+    border-radius: 20px !important;
+    background-color: #62929E !important;
+}
+
+.linklabel {
+    font-family: 'Abril Fatface';
+    font-size: 16px;
+}
+
+.linksp,
+.links p {
+    color: white !important;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .footerr {
+       font-size: 50%;
+    }
+    .logo{
+      width:110%;
+      height: 100%;
+    }
+}
+
+
+

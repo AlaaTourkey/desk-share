@@ -1,0 +1,335 @@
+.header {
+  background: linear-gradient(to left, rgba(0, 0, 0, 0.13), rgba(98, 146, 158, 0.95)), url('about-images/aboutheader.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  width: 100%;
+
+}
+
+.header-caption {
+  color: rgb(255, 255, 255);
+  font-family: abril-fatfact;
+  padding-top: 20vh;
+  padding-left: 20vh;
+}
+.header-caption h2{
+  font-size: 3rem;
+}
+.cap {
+  font-family: 'Open Sans' !important;
+  font-size: 75%;
+  width: 50%;
+  color:rgba(255, 255, 255, 0.75);
+  text-shadow: #212529bd 1px 1px;
+
+}
+
+.span {
+  color: #F3ECDC;
+}
+
+
+.two{
+  left: 50%;
+  top: 0;
+}
+.counter{
+  width: 29%;
+  height: 39%;
+  padding: 3px;
+  left: 6%;
+  top: 74%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: rgba(57, 61, 64, 1);
+  border-radius: 20px;
+  color: #ffffff;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  font-family: 'Abril Fatface';
+}
+.Deskshare{
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  color: rgba(57, 61, 64, 1);
+  font-size: 15px ;
+  text-transform: uppercase;
+}
+.mainColor{
+  color: rgba(57, 61, 64, 1);
+}
+.bgMain{
+  background-color: rgba(57, 61, 64, 1);
+}
+.smallText{
+  font-size: 13px;
+}
+.btn{
+  box-shadow: none;
+  border: none;
+  border-radius: 5px ;
+  -webkit-border-radius: 5px ;
+  -moz-border-radius: 5px ;
+  -ms-border-radius: 5px ;
+  -o-border-radius: 5px ;
+}
+.fontSize{
+  font-size: 3rem;
+}  .font {
+  font-family: "Open Sans", sans-serif;
+}  
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .counter{
+    width: 33%;
+    height: 42%;
+    padding: 3px;
+    left: 5%;
+    top: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(57, 61, 64, 1);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+  }
+
+} 
+
+
+
+
+
+.mission {
+  background-color: #62929E;
+  color: #ffffff;
+
+}
+
+.dotsmoke {
+  width: 4%;
+  height: 3%;
+margin-top: 3rem;
+margin-right: 20rem;
+margin-bottom: 1rem;
+}
+
+.label2 {
+  color: #E0D0AD;
+  padding-top: 3.5rem;
+  padding-left: 2.5rem;
+  font-family: 'Open Sans';
+}
+
+.label {
+  display: flex;
+  font-family: 'Abril Fatface';
+  justify-content: space-between;
+}
+
+.vission {
+  background-color: #62929E;
+  color: #000000;
+  padding-bottom: 20px;
+  margin-bottom: 4rem;
+  font-family: 'Abril Fatface';
+  font-size: 1.2rem;
+  
+
+}
+
+.inner {
+  padding: 20px;
+  background-color: #FDFDFF;
+  border-radius: 25px;
+
+}
+
+.h2mission {
+  font-family: 'Abril Fatface';
+
+  margin-left: 2.5rem;
+}
+
+.p1mission {
+  font-family: 'Open Sans';
+  margin-left: 2.5rem;
+  font-size: 80%;
+
+}
+.inner h4{
+  font-family: 'Abril Fatface';
+  font-size: 85%;
+}
+
+.number {
+  color: #62929E;
+  display: inline;
+}
+
+.iconbox {
+  display: inline-block;
+}
+
+.iconbox h6{
+font-family: 'Open Sans';
+font-size: 60%;
+}
+.iconbox h4,
+.iconbox h6 {
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.vission1 {
+  padding: 2.8rem;
+  align-items: center;
+  font-family: 'Open Sans';
+  font-size: .8rem;
+}
+
+/* =========================================== */
+.choice {
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.dotsmoke2 {
+  color: #dcdccb;
+  margin-top: 1.5rem;
+ 
+  width: 60px;
+  height: 40px;
+}
+
+.choicelabel h3,
+.choicelabel p {
+  margin: auto;
+}
+
+.textsmall {
+  color: #A3B18A;
+  font-family: 'open sans' !important;
+  font-size: small;
+}
+
+.textlarge {
+  font-family: 'abril fatface';
+
+}
+
+.number2 {
+  color: #83BFCE;
+}
+
+.boxh6 {
+  font-family: 'abril fatface' !important;
+  font-weight: bolder;
+}
+
+.boxp {
+  font-family: 'open sans' !important;
+  font-size: 90%;
+
+}
+
+.box {
+  padding: 1rem;
+  margin-bottom: 3.5rem;
+  margin-top: 2rem;
+  border-radius: 20px;
+}
+
+.box:hover {
+  background-color: #62929E;
+}
+
+/* =============================================================== */
+.video {
+  width: 80%;
+  height: 30vh;
+  border: 5px solid #F3ECDC;
+  border-radius: 15px;
+}
+
+.stepwork {
+  background-color: #62929E;
+  color: rgb(243, 236, 220, 50%);
+  padding: 2rem;
+}
+.itemss{
+  background-color: #83BFCE;
+  padding: 2rem;
+  border-radius: 20px;
+
+}
+.smoke{
+  display: flex;
+  text-align: center;
+}
+.dotsmoke3{
+  width: 60px;
+  height: 40px;
+  margin: auto;
+}
+.p5 {
+  font-family: 'Open Sans', sans-serif !important;
+  font-weight: 400; 
+  font-size: 15px;
+   margin-top: 2.5rem;
+   color: rgba(243, 236, 220, 0.5);
+}
+.hstepwork{
+  font-family: 'Abril Fatface' !important;
+  font-size: 30px; 
+}
+
+.iconvideo {
+  display: flex; 
+  align-items: center; 
+}
+
+.iconvideo .div {
+  margin-left: 10px; 
+}
+.iconh6{
+  font-family: 'Abril Fatface' !important;
+  font-size: 15px; 
+}
+.iconp{
+  font-family: 'Open Sans' !important;
+ font-size:large;
+  font-size: 12px; 
+  color: rgba(255, 255, 255, 0.75);
+}
+.iconsize{
+
+font-size: 1.4rem;
+}
+.ICONN{
+  color: rgba(218, 218, 218, 1);
+  font-size: 2.1rem;
+}
+.textp{
+  margin-left: 15px;
+  color: rgba(255, 255, 255, 0.75);
+}
+.h5text{
+ color: rgba(255, 255, 255, 0.75);
+font-family: 'Open Sans' !important;
+font-style: italic;
+font-size: 18px;
+}
+.plist{
+  color: rgba(255, 255, 255, 0.75);
+font-size:5x;
+font-family: 'Open Sans';
+}
