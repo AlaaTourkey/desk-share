@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './Home.module.css';
+import styles from './home.module.css';
 import cowork1 from '../../home images/cowork1.png';
 import cowork2 from '../../home images/cowork2.png';
 import dots from '../../home images/dots.png';
