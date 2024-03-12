@@ -20,7 +20,7 @@ export default function Navbar() {
                   <NavLink className="nav-link px-4 m-3" to="/home">Home</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3" to="/aboutus">For business</NavLink>
+                  <NavLink className="nav-link px-4 m-3" to="/Bussiness">For business</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-4 m-3" to="/aboutus">About</NavLink>
