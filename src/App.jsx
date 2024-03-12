@@ -2,12 +2,12 @@ import './App.css';
 import React from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Masterlayout from './components/Masterlayout/Masterlayout.jsx';
-import Home from './components/Home/Home.jsx';
+import Home from './components/Home/home.jsx';
 import Blog from './components/blog/Blog.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
-import AboutUs from './components/AboutUs/About.jsx';
-import Notfound from './components/Notfound/Notfound.jsx';
+import Notfound from './components/Notfound/notfound.jsx';
 import Forbusiness from './components/ForBusiness/Forbusiness.jsx';
+import About from './components/AboutUs/about.jsx';
 
 
 export default function App() {
@@ -18,7 +18,7 @@ export default function App() {
       , children: [
         { path: '/', element: <Home /> },
         { path: 'home', element: <Home /> },
-        { path: 'aboutus', element: <AboutUs /> },
+        { path: 'aboutus', element: <About /> },
         { path: 'contactus', element: <ContactUs /> },
         { path: 'blog', element: <Blog /> },
         { path: 'ForBusiness', element: <Forbusiness /> }
