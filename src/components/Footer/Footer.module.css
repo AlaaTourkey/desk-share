@@ -119,11 +119,11 @@
 }
 
 @media (max-width: 768px) {
-    .footerr {
-       font-size: 50%;
-    }
+  .sitelinkss{
+    margin-bottom: 15px;
+  }
     .logo{
-      width:110%;
+      width:75%;
       height: 100%;
     }
 }

@@ -31,11 +31,11 @@ export default function Footer() {
       <div className={styles.allfooter} >
         <div className="container-fluid">
           <div className={`row ${styles.footerr}`}>
-            <div className="col-3">
+            <div className="col-lg-4 col-12">
               <div className="div">
                 <img src={logo} className={styles.logo} alt="" />
                 <p className={styles.footerp}>Aplikasi terbaik layanan penginapan di seluruh apartemen dan hotel di Indoensia</p>
-                <div className="div">
+                <div className={styles.sitelinkss}>
                   <i class="fa-brands fa-facebook mx-1"></i>
                   <i class="fa-brands fa-twitter mx-1"></i>
                   <i class="fa-brands fa-instagram mx-1"></i>
@@ -48,7 +48,7 @@ export default function Footer() {
           
 
 
-<div className="col-3">
+<div className="col-lg-4 col-6">
   <h3 className={styles.linklabel}>Site Links</h3>
   <div className={styles.links}>
     <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
@@ -72,33 +72,10 @@ export default function Footer() {
   </div>
 </div>
 
-            <div className="col-3">
-              <h3 className={styles.linklabel}>Site Links</h3>
-              <div className={styles.links}>
-                <i class="fa-solid fa-caret-right d-inline-block m-2"></i>
-                <p className='d-inline'>Home</p>
-              </div>
-              <div className={styles.links}>
-                <i class="fa-solid fa-caret-right d-inline-block m-2"></i>
-                <p className='d-inline'> Home</p>
-              </div>
-              <div className={styles.links}>
-                <i class="fa-solid fa-caret-right d-inline-block m-2"></i>
-                <p className='d-inline'> Home</p>
-              </div>
-              <div className={styles.links}>
-                <i class="fa-solid fa-caret-right d-inline-block m-2"></i>
-                <p className='d-inline'> Home</p>
-              </div>
-              <div className={styles.links}>
-                <i class="fa-solid fa-caret-right d-inline-block m-2"></i>
-                <p className='d-inline'> Home</p>
-              </div>
-
-            </div>
+         
 
           
-            <div className="col-3">
+            <div className="col-lg-4 col-6">
               <div className="div">
               <h3 className={styles.linklabel}>Tetap bersama kami</h3>
               <div className={`my-2 ${styles.links}`}>

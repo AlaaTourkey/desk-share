@@ -1,0 +1,95 @@
+.header {
+    background: linear-gradient(to right, rgba(98, 146, 158, 0.49) ,rgba(98, 146, 158, 0.78), rgba(77, 180, 206, 0.42)) , url('contact-images/contact-header.jpg');
+
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    width: 100%;
+  
+  }
+  
+  .header-caption {
+    color: rgb(255, 255, 255);
+    font-family: abril-fatfact;
+    padding-top: 20vh;
+    padding-left: 8vh;
+  }
+  .header-caption h2{
+    font-size: 3rem;
+  }
+  .cap {
+    font-family: 'Open Sans' !important;
+    font-size: 75%;
+    width: 40%;
+    color:rgba(255, 255, 255, 0.75);
+
+  }
+  /* ========================================== */
+ .contactbtn{
+    color: white !important;
+    border-radius: 20px !important;
+    background-color:#62929E!important;
+  }
+  .iconcontact {
+    display: flex; 
+    align-items: center; 
+  }
+  
+  .iconcontact .div {
+    margin-left: 10px; 
+  }
+  .iconh6{
+    font-family: 'Abril Fatface' !important;
+    font-size: 15px; 
+  }
+  .iconp{
+    font-family: 'Open Sans' !important;
+    font-size: 12px; 
+    color: rgba(110, 110, 110, 1);
+  
+  }
+  .iconsize{
+  color:rgba(98, 146, 158, 1);
+  font-size: 1.4rem;
+  }
+  .ICONN{
+    color: rgba(218, 218, 218, 1);
+    font-size: 2.1rem;
+  }
+  .form{
+    background-color: rgba(249, 249, 249, 1);
+    box-shadow: 0 0 5px 3px rgba(213, 209, 209, 0.5);
+  }
+  .form input,
+  .form textarea,
+  .form select{
+    background-color: rgba(241, 241, 241, 1);
+  }
+  .form h5{
+    font-family: 'Abril Fatface' !important;
+  }
+  .form p{
+    font-family: 'Open Sans' !important;
+    font-size: small;
+    color: rgba(98, 146, 158, 1);
+    margin-top: 5px;
+  }
+  .imgform{
+    margin: auto;
+    width: 75px;
+    height:45px;
+    margin-bottom: 2rem;
+  }
+  .pinfo{
+    color: rgba(98, 146, 158, 1);
+    font-family: 'Open Sans';
+    font-weight: 500;
+  }
+  .info h5{
+    font-family: 'Abril Fatface' !important;
+  }
+  .p2{
+    color: rgba(110, 110, 110, 1);
+    font-family: 'Open Sans';
+    font-size: 10px;
+  }
