@@ -7,7 +7,8 @@ import Blog from './components/blog/Blog.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Notfound from './components/Notfound/notfound.jsx';
 import About from './components/AboutUs/about.jsx';
-import Bussiness from './components/Bussiness/Bussiness.jsx';
+import Signup from './components/Signup/Signup.jsx';
+import Login from './components/Login/Login.jsx';
 
 export default function App() {
   let routes = createBrowserRouter([
@@ -20,7 +21,8 @@ export default function App() {
         { path: 'aboutus', element: <About /> },
         { path: 'contactus', element: <ContactUs /> },
         { path: 'blog', element: <Blog /> },
-        { path: 'Bussiness', element: <Bussiness /> },
+        { path: 'Signup', element: <Signup /> },
+        { path: 'Login', element: <Login /> },
 
       ]
     }

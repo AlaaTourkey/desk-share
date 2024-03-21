@@ -15,28 +15,30 @@ export default function Navbar() {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto  mb-2 mb-lg-0">
+              <ul className="navbar-nav me-auto  ">
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3" to="/home">Home</NavLink>
+                  <NavLink className="nav-link px-2 m-1" to="/home">Home</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3" to="/Bussiness">For business</NavLink>
-                </li>
-                <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3" to="/aboutus">About</NavLink>
+                  <NavLink className="nav-link px-2 m-1" to="/aboutus">About</NavLink>
                 </li>
                 <li className={`nav-item  ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3 " to="/blog">Blog</NavLink>
+                  <NavLink className="nav-link px-2 m-1 " to="/blog">Blog</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-4 m-3" to="/contactus">Contact Us</NavLink>
+                  <NavLink className="nav-link px-2 m-1" to="/contactus">Contact Us</NavLink>
                 </li>
-               
-             
+                  
               </ul>
-              <ul className="navbar-nav m-auto mb-2 mb-lg-0 d-flex align-items-center ">
+              <ul className="navbar-nav ms-auto  ">
                 <li className="nav-item ">
                   <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
+                </li>
+                <li>
+                <NavLink className="nav-link px-2 m-1" to="/Signup">SignUp</NavLink>
+                </li>
+                <li>
+                <NavLink className="nav-link px-2 m-1" to="/Login">Login</NavLink>
                 </li>
               </ul>
             </div>

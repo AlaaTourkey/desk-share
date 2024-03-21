@@ -1,0 +1,7 @@
+.bgMain {
+  background-color: #62929E;
+}
+
+.signbg {
+  background-image: linear-gradient(to left, rgba(98, 146, 158, 0.7), rgba(98, 146, 158, 0.7)), url(../../home\ images/Sea.png);
+}

@@ -9,14 +9,13 @@ export default function Footer() {
       <div className="div">
         <div className="container-fluid">
           <div className="row m-5">
-            {/* <img src="" alt="" /> */}
             <div className={styles.footerimg}>
               {/* <img src={dotsmoke} alt="" /> */}
               <div className={`${styles.center} text-center`}>
                 <h2 className={styles.h2footer}>Desk Share</h2>
                 <h2 className={styles.h2footer}>Hybrid Work Solution for Businesses</h2>
                 <p className={`${styles.footertextt} text-center m-auto`}>Get the most out of your hybrid team and office space.
-                Take data-driven decisions to save on leases and cut costs for a successful real estate and people strategy.
+                  Take data-driven decisions to save on leases and cut costs for a successful real estate and people strategy.
                   Schedule demo</p>
                 {/* <img src={dotsmoke} alt="" /> */}
                 <button type="button" className={`btn m-2  px-4 ${styles.footerbtn}`}>Download The App</button>
@@ -45,51 +44,51 @@ export default function Footer() {
             </div>
 
 
-          
 
 
-<div className="col-lg-4 col-6">
-  <h3 className={styles.linklabel}>Site Links</h3>
-  <div className={styles.links}>
-    <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
-    <Link to="/home" className={styles.linksp}>Home</Link>
-  </div>
-  <div className={styles.links}>
-    <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
-    <Link to="/blog" className={styles.linksp}>Blog</Link>
-  </div>
-  <div className={styles.links}>
-    <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
-    <Link to="/forbusiness" className={styles.linksp}>For Business</Link>
-  </div>
-  <div className={styles.links}>
-    <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
-    <Link to="/aboutus" className={styles.linksp}>About Us</Link>
-  </div>
-  <div className={styles.links}>
-    <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
-    <Link to="/ContactUs" className={styles.linksp}>Contact</Link>
-  </div>
-</div>
 
-         
+            <div className="col-lg-4 col-6">
+              <h3 className={styles.linklabel}>Site Links</h3>
+              <div className={styles.links}>
+                <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
+                <Link to="/home" className={styles.linksp}>Home</Link>
+              </div>
+              <div className={styles.links}>
+                <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
+                <Link to="/blog" className={styles.linksp}>Blog</Link>
+              </div>
+              <div className={styles.links}>
+                <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
+                <Link to="/forbusiness" className={styles.linksp}>For Business</Link>
+              </div>
+              <div className={styles.links}>
+                <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
+                <Link to="/aboutus" className={styles.linksp}>About Us</Link>
+              </div>
+              <div className={styles.links}>
+                <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
+                <Link to="/ContactUs" className={styles.linksp}>Contact</Link>
+              </div>
+            </div>
 
-          
+
+
+
             <div className="col-lg-4 col-6">
               <div className="div">
-              <h3 className={styles.linklabel}>Tetap bersama kami</h3>
-              <div className={`my-2 ${styles.links}`}>
-               <i class="fa-solid fa-map-pin d-inline-block m-2"></i>
-                <p className='d-inline'>Jakarta, Indonesia</p>
-              </div>
-              <div className={`my-2 ${styles.links}`}>
-                <i class="fa-solid fa-envelope d-inline-block m-2"></i>
-                <p className='d-inline'> Hello@Email.com</p>
-              </div>
-              <div className={`my-2 ${styles.links}`}>
-              <i class="fa-solid fa-square-phone d-inline-block m-2"></i>
-                <p className='d-inline'> ( +62 ) 123 456 789</p>
-              </div>
+                <h3 className={styles.linklabel}>Tetap bersama kami</h3>
+                <div className={`my-2 ${styles.links}`}>
+                  <i class="fa-solid fa-map-pin d-inline-block m-2"></i>
+                  <p className='d-inline'>Jakarta, Indonesia</p>
+                </div>
+                <div className={`my-2 ${styles.links}`}>
+                  <i class="fa-solid fa-envelope d-inline-block m-2"></i>
+                  <p className='d-inline'> Hello@Email.com</p>
+                </div>
+                <div className={`my-2 ${styles.links}`}>
+                  <i class="fa-solid fa-square-phone d-inline-block m-2"></i>
+                  <p className='d-inline'> ( +62 ) 123 456 789</p>
+                </div>
               </div>
 
             </div>
