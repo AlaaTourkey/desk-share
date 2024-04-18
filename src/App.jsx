@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Masterlayout from './components/Masterlayout/Masterlayout.jsx';
 import Home from './components/Home/home.jsx';
@@ -7,32 +7,40 @@ import Blog from './components/blog/Blog.jsx';
 import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Notfound from './components/Notfound/notfound.jsx';
 import About from './components/AboutUs/about.jsx';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 
 export default function App() {
-  let routes = createBrowserRouter([
-    {
-      path: '/', element: <Masterlayout/>,
-      errorElement: <Notfound />
-      , children: [
-        { path: '/', element: <Home /> },
-        { path: 'home', element: <Home /> },
-        { path: 'aboutus', element: <About /> },
-        { path: 'contactus', element: <ContactUs /> },
-        { path: 'blog', element: <Blog /> },
-        { path: 'Signup', element: <Signup /> },
-        { path: 'Login', element: <Login /> },
+  useEffect(() => {
+    if (localStorage.getItem('userToken') != null) {
+     
+    }
+  }, []);
 
+  const [userData, setuserData] = useState(null);
+
+  const routes = createBrowserRouter([
+    {
+      path: '/',
+      element: <Masterlayout setuserData={setuserData} userData={userData} />,
+      errorElement: <Notfound />,
+      children: [
+        { path: '/', element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
+        { path: 'home', element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
+        { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
+        { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
+        { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
+        { path: 'Signup', element: <ProtectedRoute userData={userData}><Signup /></ProtectedRoute> },
+        { path: 'Login', element: <ProtectedRoute userData={userData}><Login /></ProtectedRoute> },
       ]
     }
-  ])
-
-
+  ]);
 
   return (
-    <div >
+    <div>
       <RouterProvider router={routes} />
     </div>
   );
 }
+
