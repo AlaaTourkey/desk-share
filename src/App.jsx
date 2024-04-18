@@ -9,6 +9,7 @@ import Notfound from './components/Notfound/notfound.jsx';
 import About from './components/AboutUs/about.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   let routes = createBrowserRouter([
@@ -33,6 +34,7 @@ export default function App() {
   return (
     <div >
       <RouterProvider router={routes} />
+      <Toaster />
     </div>
   );
 }

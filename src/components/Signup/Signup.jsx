@@ -1,29 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Signup.module.css';
 import phone1 from '../../home images/phone1.png'
 import phone2 from '../../home images/phone2.png'
-import { Formik, useFormik } from 'formik';
+import { useFormik } from 'formik';
+import * as Yup from 'yup'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { date } from 'yup';
 
 
 function Signup() {
 
-  function submitRegister(values) {
-    console.log(values);
-    console.log("doneeeeeeee");
+  let navigate = useNavigate();
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  //  submitRegister function
+  async function submitRegister(values) {
+    const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
+
+
+    let { data } = await axios.post(`https://desk-share-api.onrender.com/admin/signup`, values, {
+      headers: {
+        'x-api-key': apiKey,
+        'Content-Type': 'application/json',
+      },
+    })
+    console.log(data);
+    if (data.status == "true") {
+      navigate('/Login')
+      console.log("sucesssss");
+      toast.success(data.message)
+    }else{
+      toast(data.message)
+      setError(data.errors.email);
+    }
+
   }
+
+  let validateSchema = Yup.object({
+    name: Yup.string().min(3, 'name minlingth is 3').max(20, 'name maxlingth is 20').required('name is required'),
+    email: Yup.string().email('email is invalid').required('email is required'),
+    password: Yup.string().matches(
+      /^[a-zA-Z0-9]{6}$/,
+      'Password should consist of at least 6 numerical.'
+    )
+      .required('Password is required'),
+
+
+  })
+
+
 
   let formik = useFormik({
     initialValues: {
-      firstName: '',
-      lastName: '',
-      phone: '',
+      name: '',
       email: '',
       password: '',
-      rePassword: '',
-    },
+    }, validationSchema: validateSchema,
     onSubmit: submitRegister
   })
-
 
 
 
@@ -31,6 +68,9 @@ function Signup() {
     <>
       <section className="">
         <div className="container">
+          <div className="mx-auto">
+            {error ? <div className="alert alert-danger h5 ">{error}</div> : null}
+          </div>
           <div className="row">
             <div className={` ${styles.signbg} col-12 col-md-6  p-3`}>
               <div className=" w-100 mt-4">
@@ -38,25 +78,18 @@ function Signup() {
                 <img className={`${styles.phone2}  w-50`} src={phone2} alt="" />
               </div>
             </div>
-            <div className="col-12 col-md-6 my-2 p-3">
+            <div className="col-12 col-md-6 mt-5 p-3">
               <div className="">
                 <form onSubmit={formik.handleSubmit}>
-                  <div className="row">
-                    <div className="col-md-6">
-                      <label htmlFor="firstName">First Name:</label>
-                      <input
-                        type="text" id="firstName" name="firstName" className="form-control mb-3" value={formik.values.firstName} onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                      {formik.errors.firstName && formik.touched.firstName && (
-                        <div className="alert alert-danger">{formik.errors.firstName}</div>
-                      )}
-                    </div>
-                    <div className="col-md-6">
-                      <label htmlFor="lastName">Last Name:</label>
-                      <input type="text" id="lastName" name="lastName" className="form-control mb-3" value={formik.values.lastName} onChange={formik.handleChange} onBlur={formik.handleBlur} />
-                      {formik.errors.lastName && formik.touched.lastName && (
-                        <div className="alert alert-danger">{formik.errors.lastName}</div>)}
-                    </div>
+                  <div className="">
+                    <label htmlFor="name">Name:</label>
+                    <input
+                      type="text" id="name" name="name" className="form-control mb-3" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                    {formik.errors.name && formik.touched.name && (
+                      <div className="alert alert-danger">{formik.errors.name}</div>
+                    )}
                   </div>
+
 
                   <div className="mb-3">
                     <label htmlFor="email">Email:</label>
@@ -66,25 +99,16 @@ function Signup() {
                     )}
                   </div>
 
-                  <label htmlFor="phone">Phone: </label>
-                  <input value={formik.values.phone} onChange={formik.handleChange} onBlur={formik.handleBlur} name='phone' id='phone' className='form-control my-3' />
-                  {formik.errors.phone && formik.touched.phone ?
-                    <div className="alert alert-danger">{formik.errors.phone}</div> : " "}
+                  <div className="mb-3">
+                    <label htmlFor="password">Password: </label>
+                    <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} type='password' name='password' id='password' className='form-control my-3' />
+                    {formik.errors.password && formik.touched.password ?
+                      <div className="alert alert-danger">{formik.errors.password}</div> : " "}
 
+                  </div>
 
-                  <label htmlFor="password">Password: </label>
-                  <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} name='password' id='password' className='form-control my-3' />
-                  {formik.errors.password && formik.touched.password ?
-                    <div className="alert alert-danger">{formik.errors.password}</div> : " "}
+                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn`} >{isLoading ? <i class="fas fa-spinner spin   "></i> : "Register"}</button>
 
-
-                  <label htmlFor="rePassword">RePassword: </label>
-                  <input value={formik.values.rePassword} onChange={formik.handleChange} onBlur={formik.handleBlur} name='rePassword' id='rePassword' className='form-control my-3' />
-                  {formik.errors.rePassword && formik.touched.rePassword ?
-                    <div className="alert alert-danger">{formik.errors.rePassword}</div> : " "}
-
-
-                  <button type="submit" className={` ${styles.bgMain} btn`}>Register</button>
                 </form>
               </div>
             </div>
@@ -101,21 +125,7 @@ function Signup() {
 
 
 
-      {/* <div className="py-5 mx-1 ">
-          <div className={`${styles.header} container position-relative `}>
-            <div className=" w-100 ">
-              <div className="">
-                <img className={`${styles.phone1}   position-absolute`} src={phone1} alt="" />
-                <img className={`${styles.phone2}  position-absolute`} src={phone2} alt="" />
-              </div>
-              <div className={`${styles.headInfo} w-75  p-1`}>
-                <h3 className='fs-2 w-50'>Flexible workspace solutions, simplified</h3>
-                <p className={`${styles.font} ${styles.secondColor} w-50 fw-bold my-1 my-md-3 `}>Elevate work and productivity with on-demand workspaces around the globe.</p>
-                <button className={`p-2 text-white ${styles.bgMain} ${styles.font} ${styles.btn} mt-5`}> Download The App </button>
-              </div>
-            </div>
-          </div>
-        </div> */}
+
     </>
   )
 }
