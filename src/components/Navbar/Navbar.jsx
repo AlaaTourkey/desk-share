@@ -1,9 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import logo from './Nav-images/logo.png';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
+
+  let navigate = useNavigate();
+
+  function logout() {
+    localStorage.removeItem('workspaceToken')
+    navigate('Login')
+  }
+
   return (
     <div className={styles.allnav}>
       <div className="container-fluid">
@@ -18,7 +26,7 @@ export default function Navbar() {
               <ul className="navbar-nav me-auto  ">
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/home">Home</NavLink>
-                </li>
+                </li> 
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/aboutus">About</NavLink>
                 </li>
@@ -33,6 +41,9 @@ export default function Navbar() {
               <ul className="navbar-nav ms-auto  ">
                 <li className="nav-item ">
                   <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
+                </li>
+                <li>
+                <NavLink onClick={logout} className="nav-link px-2 m-1 " to="Login">Logout</NavLink>
                 </li>
                 <li>
                 <NavLink className="nav-link px-2 m-1" to="/Signup">SignUp</NavLink>

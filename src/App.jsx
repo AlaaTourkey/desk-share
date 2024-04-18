@@ -10,6 +10,7 @@ import About from './components/AboutUs/about.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
+import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   useEffect(() => {
@@ -40,6 +41,7 @@ export default function App() {
   return (
     <div>
       <RouterProvider router={routes} />
+      <Toaster />
     </div>
   );
 }
