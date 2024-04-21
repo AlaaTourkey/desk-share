@@ -48,7 +48,7 @@ function Login() {
 
   let validateSchema = Yup.object({
     email: Yup.string().email('email is invalid').required('email is required'),
-    password: Yup.string().matches(/^[a-zA-Z0-9]{6}$/,'Password should consist of at least 6 numerical.'
+    password: Yup.string().matches(/^[a-zA-Z0-9]{6,}$/,'Password should consist of at least 6 numerical.'
     ).required('Password is required'),
 
 
@@ -123,4 +123,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Login;

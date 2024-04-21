@@ -1,15 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from './Nav-images/logo.png';
 import styles from './Navbar.module.css';
 
 export default function Navbar() {
-
-  let navigate = useNavigate();
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   function logout() {
-    localStorage.removeItem('workspaceToken')
-    navigate('Login')
+    localStorage.removeItem('workspaceToken'); 
+    setIsLoggedIn(false); 
+    navigate('/Login'); 
+    console.log('null');
   }
 
   return (
@@ -49,8 +51,12 @@ export default function Navbar() {
                 <NavLink className="nav-link px-2 m-1" to="/Signup">SignUp</NavLink>
                 </li>
                 <li>
-                <NavLink className="nav-link px-2 m-1" to="/Login">Login</NavLink>
-                </li>
+          {isLoggedIn ? (
+            <NavLink onClick={logout}>Logout</NavLink>
+          ) : (
+            <NavLink className="nav-link px-2 m-1" to="/Login">Login</NavLink>
+          )}
+        </li>
               </ul>
             </div>
           </div>

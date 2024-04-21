@@ -14,7 +14,7 @@ import { Toaster } from 'react-hot-toast';
 
 export default function App() {
   useEffect(() => {
-    if (localStorage.getItem('userToken') != null) {
+    if (localStorage.getItem('workspaceToken') != null) {
      
     }
   }, []);
@@ -32,8 +32,8 @@ export default function App() {
         { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
         { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
         { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
-        { path: 'Signup', element: <ProtectedRoute userData={userData}><Signup /></ProtectedRoute> },
-        { path: 'Login', element: <ProtectedRoute userData={userData}><Login /></ProtectedRoute> },
+        { path: 'Signup', element:<Signup />},
+        { path: 'Login', element:<Login /> },
       ]
     }
   ]);
@@ -45,4 +45,5 @@ export default function App() {
     </div>
   );
 }
+
 
