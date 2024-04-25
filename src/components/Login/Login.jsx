@@ -48,8 +48,13 @@ function Login() {
 
   let validateSchema = Yup.object({
     email: Yup.string().email('email is invalid').required('email is required'),
-    password: Yup.string().matches(/^[a-zA-Z0-9]{6,}$/,'Password should consist of at least 6 numerical.'
-    ).required('Password is required'),
+    password: Yup.string().matches(
+      /^(?=.*[A-Za-z])/,'Password should contain at least one uppercase or lowercase letter.')
+      .matches(
+        /[A-Za-z\d@$!%*?&]{6,}/,
+        'Password should consist of at least 6 characters.'
+      ).required('Password is required'),
+
 
 
   })
@@ -74,13 +79,7 @@ function Login() {
             {error ? <div className="alert alert-danger h5 ">{error}</div> : null}
           </div>
           <div className="row">
-            <div className={` ${styles.signbg} col-12 col-md-6  p-3`}>
-              <div className=" w-100 mt-4">
-                <img className={`${styles.phone1}   w-50`} src={phone1} alt="" />
-                <img className={`${styles.phone2}  w-50`} src={phone2} alt="" />
-              </div>
-            </div>
-            <div className="col-12 col-md-6 mt-5 p-3">
+          <div className="col-12 col-md-6 mt-5 p-3">
               <div className="">
                 <form onSubmit={formik.handleSubmit}>
 
@@ -105,6 +104,13 @@ function Login() {
                 </form>
               </div>
             </div>
+            <div className={` ${styles.signbg} col-12 col-md-6  p-3`}>
+              <div className=" w-100 mt-4">
+                <img className={`${styles.phone1}   w-50`} src={phone1} alt="" />
+                <img className={`${styles.phone2}  w-50`} src={phone2} alt="" />
+              </div>
+            </div>
+           
           </div>
         </div>
       </section>
