@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 import { date } from 'yup';
 
 
-function Login() {
+function Login({saveUserData}) {
 
   let navigate = useNavigate();
   const [error, setError] = useState(null);
@@ -36,12 +36,10 @@ function Login() {
         toast.success(data.message)
         toast.success("you should signin every 7 days")
         localStorage.setItem("workspaceToken", data.token);
+        saveUserData()
         setWorkspaceToken(data.token)
         navigate('/home')
     }
-    console.log();
-
- 
   }
 
   
@@ -110,7 +108,7 @@ function Login() {
                 <img className={`${styles.phone2}  w-50`} src={phone2} alt="" />
               </div>
             </div>
-           
+          
           </div>
         </div>
       </section>

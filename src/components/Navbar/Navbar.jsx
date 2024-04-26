@@ -3,13 +3,12 @@ import { NavLink, useNavigate } from 'react-router-dom';
 import logo from './Nav-images/logo.png';
 import styles from './Navbar.module.css';
 
-export default function Navbar() {
+export default function Navbar({userData,setuserData}) {
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   function logout() {
     localStorage.removeItem('workspaceToken');
-    setIsLoggedIn(false);
+    setuserData(null)
     navigate('/login');
   }
 
@@ -36,15 +35,17 @@ export default function Navbar() {
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/contactus">Contact Us</NavLink>
                 </li>
-              </ul>
+              </ul> 
+              
               <ul className="navbar-nav ms-auto  ">
                 <li className="nav-item ">
                   <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
                 </li>
-                <li>
-                  {isLoggedIn ? (
-                    <NavLink onClick={logout} className="nav-link px-2 m-1" to="#">Logout</NavLink>
-                  ) : (
+                {userData ? (
+                    <li>
+                      <NavLink onClick={logout} className="nav-link px-2 m-1"  >Logout</NavLink>
+                    </li>
+                  ) : 
                     <>
                       <li>
                         <NavLink className="nav-link px-2 m-1" to="/login">Login</NavLink>
@@ -53,8 +54,7 @@ export default function Navbar() {
                         <NavLink className="nav-link px-2 m-1" to="/signup">Signup</NavLink>
                       </li>
                     </>
-                  )}
-                </li>
+                  }
               </ul>
             </div>
           </div>

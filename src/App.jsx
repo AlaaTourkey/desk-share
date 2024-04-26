@@ -11,20 +11,29 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 import { Toaster } from 'react-hot-toast';
+import { jwtDecode } from "jwt-decode";
 
 export default function App() {
+
   useEffect(() => {
-    if (localStorage.getItem('workspaceToken') != null) {
-     
+    if (localStorage.getItem('workspaceToken')) {
+      saveUserData()
     }
   }, []);
 
+
   const [userData, setuserData] = useState(null);
+  function saveUserData() {
+    let workspaceToken = localStorage.getItem('workspaceToken')
+    const decodedToken = jwtDecode(workspaceToken);
+    setuserData(decodedToken)
+    console.log(decodedToken);
+  }
 
   const routes = createBrowserRouter([
     {
       path: '/',
-      element: <Masterlayout setuserData={setuserData} userData={userData} />,
+      element: <Masterlayout saveUserData={saveUserData} userData={userData} />,
       errorElement: <Notfound />,
       children: [
         { path: '/', element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
@@ -33,7 +42,7 @@ export default function App() {
         { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
         { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
         { path: 'Signup', element:<Signup />},
-        { path: 'Login', element:<Login /> },
+        { path: 'Login', element:<Login saveUserData={saveUserData} /> },
       ]
     }
   ]);
