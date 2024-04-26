@@ -44,9 +44,9 @@ export default function Navbar() {
                 <li className="nav-item ">
                   <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
                 </li>
-                <li>
+                {/* <li>
                 <NavLink onClick={logout} className="nav-link px-2 m-1 " to="Login">Logout</NavLink>
-                </li>
+                </li> */}
                 <li>
                 <NavLink className="nav-link px-2 m-1" to="/Signup">SignUp</NavLink>
                 </li>
