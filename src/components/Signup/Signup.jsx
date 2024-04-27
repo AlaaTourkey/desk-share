@@ -42,11 +42,11 @@ function Signup() {
   let validateSchema = Yup.object({
     name: Yup.string().min(3, 'name minlingth is 3').max(20, 'name maxlingth is 20').required('name is required'),
     email: Yup.string().email('email is invalid').required('email is required'),
-    password: Yup.string().matches(
-      /^[a-zA-Z0-9]{6}$/,
-      'Password should consist of at least 6 numerical.'
-    )
-      .required('Password is required'),
+    password: Yup.string().matches(/^(?=.*[A-Za-z])/,'Password should contain at least one uppercase or lowercase letter.')
+      .matches(
+        /[A-Za-z\d@$!%*?&]{6,}/,
+        'Password should consist of at least 6 characters.'
+      ).required('Password is required'),
 
 
   })
