@@ -11,7 +11,9 @@ import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 import { Toaster } from 'react-hot-toast';
+import DashBoardPage from './components/Dashboard/DashBoardPage.jsx';
 import { jwtDecode } from "jwt-decode";
+
 
 export default function App() {
 
@@ -20,7 +22,6 @@ export default function App() {
       saveUserData()
     }
   }, []);
-
 
   const [userData, setuserData] = useState(null);
   
