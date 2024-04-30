@@ -39,7 +39,7 @@ export default function Navbar({userData,setuserData}) {
               
               <ul className="navbar-nav ms-auto  ">
                 <li className="nav-item ">
-                  <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
+                  <NavLink to='/DashBoardPage' type="button" className={`btn m-2   ${styles.buttonnav}`}> For WorkSpace</NavLink>
                 </li>
                 {userData ? (
                     <li>

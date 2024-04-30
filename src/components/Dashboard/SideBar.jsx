@@ -2,6 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTableList,faGear } from '@fortawesome/free-solid-svg-icons';
 import WorkSpace from './WorkSpace';
+import { Link } from 'react-router-dom';
 function SideBar() {
   return (
     <div className='col-2 p-2'>
@@ -12,7 +13,7 @@ function SideBar() {
         <div className='d-flex flex-column gap-4'>
             <div className='p-4 py-3 fs-5 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
             <FontAwesomeIcon icon={faTableList} size="lg" />
-            <span>Workspaces</span>
+            <Link to='/Workspaces'>Workspaces</Link>
             </div>
             <div className='p-4 py-3 fs-5 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
             <FontAwesomeIcon icon={faTableList} size="lg"/>

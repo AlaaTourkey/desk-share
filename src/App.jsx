@@ -8,12 +8,12 @@ import ContactUs from './components/ContactUs/ContactUs.jsx';
 import Notfound from './components/Notfound/notfound.jsx';
 import About from './components/AboutUs/about.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import DashBoardPage from '../src/components/Dashboard/DashBoardPage.jsx';
 import Signup from './components/Signup/Signup.jsx';
 import Login from './components/Login/Login.jsx';
 import { Toaster } from 'react-hot-toast';
-import DashBoardPage from './components/Dashboard/DashBoardPage.jsx';
 import { jwtDecode } from "jwt-decode";
-
+import WorkSpace from './components/Dashboard/WorkSpace.jsx';
 
 export default function App() {
 
@@ -44,6 +44,8 @@ export default function App() {
         { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
         { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
         { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
+        { path: 'DashBoardPage', element: <ProtectedRoute ><DashBoardPage/></ProtectedRoute> },
+        { path: 'Workspaces', element: <ProtectedRoute ><WorkSpace/></ProtectedRoute> },
         { path: 'Signup', element:<Signup />},
         { path: 'Login', element:<Login saveUserData={saveUserData} /> },
       ]
@@ -52,6 +54,7 @@ export default function App() {
 
   return (
     <div>
+      
       <RouterProvider router={routes} />
       <Toaster />
     </div>
