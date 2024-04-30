@@ -1,14 +1,22 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from './Nav-images/logo.png';
-import styles from './Navbar.module.css';
+import styles from './Navbar.module.css'; 
 
-export default function Navbar({userData,setuserData}) {
+
+export default function Navbar({userData, setuserData}) {
   const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate('/DashBoardPage.jsx');
+    console.log("btn");
+  };
+  
+  
 
   function logout() {
     localStorage.removeItem('workspaceToken');
-    setuserData(null)
+    setuserData(null);
     navigate('/login');
   }
 
@@ -22,48 +30,40 @@ export default function Navbar({userData,setuserData}) {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul className="navbar-nav me-auto  ">
+              <ul className="navbar-nav me-auto">
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/home">Home</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/aboutus">About</NavLink>
                 </li>
-                <li className={`nav-item  ${styles.item}`}>
-                  <NavLink className="nav-link px-2 m-1 " to="/blog">Blog</NavLink>
+                <li className={`nav-item ${styles.item}`}>
+                  <NavLink className="nav-link px-2 m-1" to="/blog">Blog</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 m-1" to="/contactus">Contact Us</NavLink>
                 </li>
               </ul> 
               
-              <ul className="navbar-nav ms-auto  ">
+              <ul className="navbar-nav ms-auto">
                 <li className="nav-item ">
-                  <button type="button" className={`btn m-2   ${styles.buttonnav}`}> For workspaces</button>
+                <NavLink  onClick={handleButtonClick}> <button type="button"  className={`btn m-2 ${styles.buttonnav}`}>For Workspaces</button></NavLink>
                 </li>
 
-                {/* <li>
-                <NavLink onClick={logout} className="nav-link px-2 m-1 " to="Login">Logout</NavLink>
-                </li> */}
-               
-        
-        
-
                 {userData ? (
+                  <li>
+                    <NavLink onClick={logout} className="nav-link px-2 m-1" to="/">Logout</NavLink>
+                  </li>
+                ) : (
+                  <>
                     <li>
-                      <NavLink onClick={logout} className="nav-link px-2 m-1"  >Logout</NavLink>
+                      <NavLink className="nav-link px-2 m-1" to="/login">Login</NavLink>
                     </li>
-                  ) : 
-                    <>
-                      <li>
-                        <NavLink className="nav-link px-2 m-1" to="/login">Login</NavLink>
-                      </li>
-                      <li>
-                        <NavLink className="nav-link px-2 m-1" to="/signup">Signup</NavLink>
-                      </li>
-                    </>
-                  }
-
+                    <li>
+                      <NavLink className="nav-link px-2 m-1" to="/signup">Signup</NavLink>
+                    </li>
+                  </>
+                )}
               </ul>
             </div>
           </div>
@@ -72,3 +72,4 @@ export default function Navbar({userData,setuserData}) {
     </div>
   );
 }
+
