@@ -1,6 +1,6 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTableList,faGear } from '@fortawesome/free-solid-svg-icons';
+import { faTableList,faGear,faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import WorkSpace from './WorkSpace';
 import { Link } from 'react-router-dom';
 function SideBar() {
@@ -11,17 +11,21 @@ function SideBar() {
             <img src="/assets/dashboard/deskshare.png" alt="" style={{maxWidth:"100%"}}/>
         </div>
         <div className='d-flex flex-column gap-4'>
-            <div className='p-4 py-3 fs-5 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
-            <FontAwesomeIcon icon={faTableList} size="lg" />
-            <Link to='/Workspaces'>Workspaces</Link>
+            <div className='p-4 py-3 fs-6 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
+            <FontAwesomeIcon icon={faTableList}  />
+            <Link className='text-decoration-none' to='/DashBoardPage/workspaces' style={{color:"#62939f"}}>Workspaces</Link>
             </div>
-            <div className='p-4 py-3 fs-5 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
-            <FontAwesomeIcon icon={faTableList} size="lg"/>
-            <span>Requests</span>
+            <div className='p-4 py-3 fs-6 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
+            <FontAwesomeIcon icon={faTableList} />
+            <Link className='text-decoration-none' to='/DashBoardPage/requests' style={{color:"#62939f"}}>Requests</Link>
             </div>
-            <div className='p-4 py-3 fs-5 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
-            <FontAwesomeIcon icon={faGear} size="lg"/>
-            <span>Reports</span>
+            <div className='p-4 py-3 fs-6 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
+            <FontAwesomeIcon icon={faGear} />
+            <Link className='text-decoration-none' to='/DashBoardPage/workspaces' style={{color:"#62939f"}}>Workspaces</Link>
+            </div>
+            <div className='p-4 py-3 fs-6 d-flex justify-content-start align-items-center gap-2 rounded-3' style={{color:"#62939f", backgroundColor:"rgba(98, 147, 159, 0.3)"}}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+            <Link className='text-decoration-none' to='/' style={{color:"#62939f"}}>Back</Link>
             </div>
         </div>
         </div>

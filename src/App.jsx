@@ -14,7 +14,8 @@ import Login from './components/Login/Login.jsx';
 import { Toaster } from 'react-hot-toast';
 import { jwtDecode } from "jwt-decode";
 import WorkSpace from './components/Dashboard/WorkSpace.jsx';
-
+import Requests from './components/Dashboard/Requests.jsx';
+import WorkspaceForm from './components/Dashboard/WorkspaceForm.jsx';
 export default function App() {
 
   useEffect(() => {
@@ -44,10 +45,29 @@ export default function App() {
         { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
         { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
         { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
-        { path: 'DashBoardPage', element: <ProtectedRoute ><DashBoardPage/></ProtectedRoute> },
         { path: 'Workspaces', element: <ProtectedRoute ><WorkSpace/></ProtectedRoute> },
         { path: 'Signup', element:<Signup />},
         { path: 'Login', element:<Login saveUserData={saveUserData} /> },
+      ]
+    },
+    {
+      path:"DashBoardPage",
+      element:<ProtectedRoute>
+        <DashBoardPage></DashBoardPage>
+      </ProtectedRoute>,
+      children:[
+        {
+          path:"workspaces",
+          element:<WorkSpace/>
+        },
+        {
+          path:"requests",
+          element:<Requests/>
+        },
+        {
+          path:"addworkspace",
+          element:<WorkspaceForm/>
+        },
       ]
     }
   ]);
