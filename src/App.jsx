@@ -16,6 +16,7 @@ import { jwtDecode } from "jwt-decode";
 import WorkSpace from './components/Dashboard/WorkSpace.jsx';
 import Requests from './components/Dashboard/Requests.jsx';
 import WorkspaceForm from './components/Dashboard/WorkspaceForm.jsx';
+import ItemDetails from './components/Dashboard/ItemDetails.jsx';
 export default function App() {
 
   useEffect(() => {
@@ -25,13 +26,12 @@ export default function App() {
   }, []);
 
   const [userData, setuserData] = useState(null);
-  
+
   // to handle refresh 
   function saveUserData() {
     let workspaceToken = localStorage.getItem('workspaceToken')
     const decodedToken = jwtDecode(workspaceToken);
     setuserData(decodedToken)
-    console.log(decodedToken);
   }
 
   const routes = createBrowserRouter([
@@ -45,28 +45,36 @@ export default function App() {
         { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
         { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
         { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
-        { path: 'Workspaces', element: <ProtectedRoute ><WorkSpace/></ProtectedRoute> },
-        { path: 'Signup', element:<Signup />},
-        { path: 'Login', element:<Login saveUserData={saveUserData} /> },
+        { path: 'Workspaces', element: <ProtectedRoute ><WorkSpace /></ProtectedRoute> },
+        { path: 'Signup', element: <Signup /> },
+        { path: 'Login', element: <Login saveUserData={saveUserData} /> },
       ]
     },
     {
-      path:"DashBoardPage",
-      element:<ProtectedRoute>
+      path: "DashBoardPage",
+      element: <ProtectedRoute>
         <DashBoardPage></DashBoardPage>
       </ProtectedRoute>,
-      children:[
+      children: [
         {
-          path:"workspaces",
-          element:<WorkSpace/>
+          path: '',
+          element: <WorkSpace />
         },
         {
-          path:"requests",
-          element:<Requests/>
+          path: "workspaces",
+          element: <WorkSpace />
         },
         {
-          path:"addworkspace",
-          element:<WorkspaceForm/>
+          path: "requests",
+          element: <Requests />
+        },
+        {
+          path: "addworkspace",
+          element: <WorkspaceForm />
+        },
+        {
+          path: "itemdetails/:id",
+          element: <ItemDetails/>
         },
       ]
     }
@@ -74,7 +82,7 @@ export default function App() {
 
   return (
     <div>
-      
+
       <RouterProvider router={routes} />
       <Toaster />
     </div>
