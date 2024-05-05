@@ -58,7 +58,7 @@ export default function App() {
       children: [
         {
           path: '',
-          element: <WorkSpace />
+          element: <Requests />
         },
         {
           path: "workspaces",

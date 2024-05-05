@@ -54,10 +54,10 @@ function WorkSpace() {
                     </div>
                 </div>
             </div>
-            <div className='row pt-5 my-5 '>
+            <div className='row p-5 my-5 g-3 '>
                 {wSpace?.map((product) => (
-                    <div className="col-6 col-md-3 p-2 text-center  text-capitalize" key={product._id}>
-                        <div className="">
+                    <div className="col-6 col-md-3   text-center text-capitalize" key={product._id}>
+                        <div className="bg-body-secondary p-2">
                             <Link className='nav-link' to={`../itemdetails/${product._id}`}>
                                 <img className='rounded-3 w-100' src={product.cover} alt="workSpace Cover" />
                                 <h3 className='h5' style={{ color: "#62939f" }} >{product.name}</h3>

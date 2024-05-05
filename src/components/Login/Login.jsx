@@ -34,7 +34,6 @@ function Login({saveUserData}) {
     if (data.status == true) {
         setIsLoading(false);
         toast.success(data.message)
-        toast.success("you should signin every 7 days")
         localStorage.setItem("workspaceToken", data.token);
         saveUserData()
         setWorkspaceToken(data.token)

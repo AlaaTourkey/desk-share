@@ -8,7 +8,6 @@ function ItemDetails() {
 
   // to get id
   let { id } = useParams()
-  // console.log(id);
 
   const token = localStorage.getItem('workspaceToken');
 
