@@ -9,7 +9,7 @@ function Requests() {
       const [rejectedRequests, setRejectedRequests] = useState([]);
 
     async function acceptRequest(requestId) {
-        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MmNlNjA5MThkZDZmOWQzNWIyZmU0MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDIxODUxOH0.k04_A2j4cNYPVaTC_wHBWtu14UG2wAAjaQxZZ4aB5tc'; 
+        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8'; 
         const token = localStorage.getItem('workspaceToken');
         try {
             let data = await axios.put(
@@ -31,7 +31,7 @@ function Requests() {
     }
     
     async function rejectRequest(requestId) {
-        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MmNlNjA5MThkZDZmOWQzNWIyZmU0MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDIxODUxOH0.k04_A2j4cNYPVaTC_wHBWtu14UG2wAAjaQxZZ4aB5tc'; 
+        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8'; 
         const token = localStorage.getItem('workspaceToken');
         try {
             let data = await axios.put(
@@ -47,9 +47,11 @@ function Requests() {
             );
             console.log("Request rejected successfully:", data);
             setRejectedRequests(rejectedRequests.filter(request => request.id !== requestId));
+
         } catch (error) {
             console.error("Error rejecting request:", error);
         }
+     
     }
     
     function showAcceptedRequests() {
