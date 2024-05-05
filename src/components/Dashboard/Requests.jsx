@@ -4,34 +4,36 @@ import axios from 'axios';
 
 function Requests() {
 
-      const [requestType, setRequestType] = useState(null);
-      const [acceptedRequests, setAcceptedRequests] = useState([]);
-      const [rejectedRequests, setRejectedRequests] = useState([]);
+        const [requestType, setRequestType] = useState(null);
+        const [acceptedRequests, setAcceptedRequests] = useState([]);
+        const [rejectedRequests, setRejectedRequests] = useState([]);
 
-    async function acceptRequest(requestId) {
-        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MmNlNjA5MThkZDZmOWQzNWIyZmU0MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDIxODUxOH0.k04_A2j4cNYPVaTC_wHBWtu14UG2wAAjaQxZZ4aB5tc'; 
         const token = localStorage.getItem('workspaceToken');
+
+
+    // Headers
+    const headers = {
+        'x-api-key': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8',
+        'Content-Type': 'application/json',
+        'Authorization': token
+    };
+
+
+    async function acceptRequest() {
         try {
-            let data = await axios.put(
-                `https://desk-share-api.onrender.com/admin/reservations/${requestId}/accept`,
-                null,
-                {
-                    headers: {
-                        'x-api-key': apiKey,
-                        'Content-Type': 'application/json',
-                        'Authorization': token
-                    }
-                }
-            );
-            console.log("Request accepted successfully:", data);
-            setAcceptedRequests(acceptedRequests.filter(request => request.id !== requestId));
+            let data = await axios.put(`https://desk-share-api.onrender.com/admin/reservations/662e2a895298ed6cf6b98b70/accept`,{}, {headers});
+            console.log( data);
+            console.log("dataaaaaaaaaaaaaaaaaaa");
+            // setAcceptedRequests(acceptedRequests.filter(request => request.id !== requestId));
         } catch (error) {
             console.error("Error accepting request:", error);
+            console.log("errorrrrrrrrrrrrrrrrrr");
         }
     }
     
     async function rejectRequest(requestId) {
-        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MmNlNjA5MThkZDZmOWQzNWIyZmU0MyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcxNDIxODUxOH0.k04_A2j4cNYPVaTC_wHBWtu14UG2wAAjaQxZZ4aB5tc'; 
+        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8'; 
+
         const token = localStorage.getItem('workspaceToken');
         try {
             let data = await axios.put(
@@ -54,8 +56,6 @@ function Requests() {
     
     function showAcceptedRequests() {
         setRequestType('accepted');
-
-
     }
     function showRejectedRequests() {
         setRequestType('rejected');
@@ -117,7 +117,7 @@ function Requests() {
                                 Accepted Requests
                             </button>
                             <button onClick={rejectRequest}  className='btn btn-danger p-4 py-3 fs-6 rounded-3'>
-                               Rejected Requests
+                                Rejected Requests
                             </button>
                         </div>
                     </div>
