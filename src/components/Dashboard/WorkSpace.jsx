@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { DateSchema } from 'yup';
 function WorkSpace() {
 
     const [wSpace, setWSpace] = useState([])
@@ -21,6 +22,7 @@ function WorkSpace() {
                     }
                 }
             );
+            console.log(data.workspaces);
             console.log(data.workspaces);
             setWSpace(data.workspaces)
         } catch (error) {

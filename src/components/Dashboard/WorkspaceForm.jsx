@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 
-// import * as yup from 'yup';
+import * as yup from 'yup';
 
 
 function WorkspaceForm() {
