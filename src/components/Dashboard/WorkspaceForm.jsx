@@ -23,13 +23,14 @@ function WorkspaceForm() {
                     }
                 }
             );
-            console.log("dataaaaaaaaa");
+            console.log("dataaaaaaaaaaa");
             console.log(data);
         } catch (error) {
-            console.log("errorrrrrrrrrrrrr");
-            console.log(error);
+            console.log(error.response.data.errors );
+            console.log("errorrrrrrrrrrr");
         }
     }
+
 
 
     const formik = useFormik({
@@ -53,17 +54,20 @@ function WorkspaceForm() {
                 <div className="row mb-2">
                     <div className="col">
                         <label htmlFor="country" className="form-label p-2">country</label>
-                        <select id="country" onChange={formik.handleChange} value={formik.values.country} name="country" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
-                            <option value="Egypt">Egypt</option>
-                        </select>
+                        <input type="text" id="country" onChange={formik.handleChange} value={formik.values.country} name="country" className="form-control p-2 py-4 fs-6 border-2 border-info-subtle" placeholder='workspace name'/>
+                        {/* <select id="country" onChange={formik.handleChange} value={formik.values.country} name="country" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
+                            <option value="65ea2167eedefdf87f991d35">Egypt</option>
+                        </select> */}
                     </div>
                     <div className="col">
                         <label htmlFor="city" className="form-label p-2">city</label>
-                        <select id="city"  onChange={formik.handleChange} value={formik.values.city} name="city" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
-                            <option value="Tanta">Tanta</option>
+                        <input type="text" id="city" onChange={formik.handleChange} value={formik.values.city} name="city" className="form-control p-2 py-4 fs-6 border-2 border-info-subtle" placeholder='workspace name'/>
+                        
+                        {/* <select id="city" onChange={formik.handleChange} value={formik.values.city} name="city" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
+                            <option value="65e9b53b583cfabbd459bfe4">Tanta</option>
                             <option value="Cairo">Cairo</option>
                             <option value="Alex">Alex</option>
-                        </select>
+                        </select> */}
                     </div>
                 </div>
                 <div className='mb-3'>
@@ -71,7 +75,7 @@ function WorkspaceForm() {
                     <input type="text" onChange={formik.handleChange} value={formik.values.address} name='address' id='address' className="form-control p-2 py-4 fs-6 border-2 border-info-subtle" placeholder='workspace address' />
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <input type="submit" value="submit" className='btn fs-4 p-2' style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)", width: "200px" }} />
+                    <input type="submit"  value="submit" className='btn fs-4 p-2' style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)", width: "200px" }} />
                 </div>
             </form>
         </div>

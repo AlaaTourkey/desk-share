@@ -1,7 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
 function WorkSpace() {
+
+    const [wSpace, setWSpace] = useState([])
+
+    const token = localStorage.getItem('workspaceToken');
+
+    async function getWorkspaces() {
+        const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
+        try {
+            let { data } = await axios.get(
+                'https://desk-share-api.onrender.com/admin/workspaces',
+                {
+                    headers: {
+                        'x-api-key': apiKey,
+                        'Authorization': token
+                    }
+                }
+            );
+            console.log(data.workspaces);
+            setWSpace(data.workspaces)
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    useEffect(() => {
+        getWorkspaces()
+
+    }, []);
+
+
     return (
         <div className='p-2'>
             <div>
@@ -22,19 +54,19 @@ function WorkSpace() {
                     </div>
                 </div>
             </div>
-            <div className='row pt-5 px-2'>
-                <div className="col col-3">
-                    <img className='rounded-3' src="/assets/dashboard/cover.png" alt="" style={{ display: "block", width: "100%" }} />
-                </div>
-                <div className="col col-3">
-                    <img className='rounded-3' src="/assets/dashboard/cover.png" alt="" style={{ display: "block", width: "100%" }} />
-                </div>
-                <div className="col col-3">
-                    <img className='rounded-3' src="/assets/dashboard/cover.png" alt="" style={{ display: "block", width: "100%" }} />
-                </div>
-                <div className="col col-3">
-                    <img className='rounded-3' src="/assets/dashboard/cover.png" alt="" style={{ display: "block", width: "100%" }} />
-                </div>
+            <div className='row pt-5 my-5 '>
+                {wSpace?.map((product) => (
+                    <div className="col-6 col-md-3 p-2 text-center  text-capitalize" key={product._id}>
+                        <div className="">
+                            <Link className='nav-link' to={`../itemdetails/${product._id}`}>
+                                <img className='rounded-3 w-100' src={product.cover} alt="workSpace Cover" />
+                                <h3 className='h5' style={{ color: "#62939f" }} >{product.name}</h3>
+                                <h6 className='text-dark-emphasis ' >{product.city.name}</h6>
+                                <h6 className='fs-6 text-secondary'>{product.country.name}</h6>
+                            </Link>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
     )
