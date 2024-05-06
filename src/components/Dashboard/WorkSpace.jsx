@@ -2,19 +2,22 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUpload, faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
-import { DateSchema } from 'yup';
+import { Link, useParams } from 'react-router-dom';
 function WorkSpace() {
 
-    const [wSpace, setWSpace] = useState([])
+    const [details, setDetails] = useState('')
+
+    // to get id
+    let { id } = useParams()
 
     const token = localStorage.getItem('workspaceToken');
 
-    async function getWorkspaces() {
+    async function getDetails() {
+
         const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
         try {
-            let { data } = await axios.get(
-                'https://desk-share-api.onrender.com/admin/workspaces',
+            let data = await axios.get(
+                `https://desk-share-api.onrender.com/admin/workspaces/${id}`,
                 {
                     headers: {
                         'x-api-key': apiKey,
@@ -22,17 +25,13 @@ function WorkSpace() {
                     }
                 }
             );
-            console.log(data.workspaces);
-            console.log(data.workspaces);
-            setWSpace(data.workspaces)
+            setDetails(data?.data)
         } catch (error) {
             console.log(error);
         }
     }
-
     useEffect(() => {
-        getWorkspaces()
-
+        getDetails()
     }, []);
 
 
@@ -49,26 +48,28 @@ function WorkSpace() {
             </div>
             <div className='row'>
                 <div className="col col-12">
-                    <h1>D Co-Working Space</h1>
+                    <h1>{details?.name}</h1>
                     <div style={{ color: "#62939f" }} className='fs-5 d-flex gap-2 align-items-center'>
                         <FontAwesomeIcon icon={faLocationDot} size="lg" />
-                        <span>Kota Kinabalu, Sabah</span>
+                        <span>{details?.address} , {details?.city?.name} , {details?.country?.name}</span>
                     </div>
                 </div>
             </div>
-            <div className='row p-5 my-5 g-3 '>
-                {wSpace?.map((product) => (
-                    <div className="col-6 col-md-3   text-center text-capitalize" key={product._id}>
-                        <div className="bg-body-secondary p-2">
-                            <Link className='nav-link' to={`../itemdetails/${product._id}`}>
-                                <img className='rounded-3 w-100' src={product.cover} alt="workSpace Cover" />
-                                <h3 className='h5' style={{ color: "#62939f" }} >{product.name}</h3>
-                                <h6 className='text-dark-emphasis ' >{product.city.name}</h6>
-                                <h6 className='fs-6 text-secondary'>{product.country.name}</h6>
-                            </Link>
-                        </div>
+            <div className="container">
+                <div className="row my-5 text-center">
+                    <div className=" col-md-3 ">
+                        <img className='w-100 ' src={details.cover} alt="work space cover" />
                     </div>
-                ))}
+                    <div className=" col-md-3 ">
+                        <img className='w-100 ' src={details.cover} alt="work space cover" />
+                    </div>
+                    <div className=" col-md-3 ">
+                        <img className='w-100 ' src={details.cover} alt="work space cover" />
+                    </div>
+                    <div className=" col-md-3 ">
+                        <img className='w-100 ' src={details.cover} alt="work space cover" />
+                    </div>
+                </div>
             </div>
         </div>
     )
