@@ -57,10 +57,10 @@ export default function Footer() {
                 <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
                 <Link to="/blog" className={styles.linksp}>Blog</Link>
               </div>
-              <div className={styles.links}>
+              {/* <div className={styles.links}>
                 <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
                 <Link to="/forbusiness" className={styles.linksp}>For Business</Link>
-              </div>
+              </div> */}
               <div className={styles.links}>
                 <i className="fa-solid fa-caret-right d-inline-block m-2"></i>
                 <Link to="/aboutus" className={styles.linksp}>About Us</Link>
