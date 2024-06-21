@@ -3,9 +3,14 @@ body {
 }
 .nav-link.active{
   background-color:hsl(192, 24%, 50%) !important;
-  border-radius:10px ;
+  color: #fff !important;
+  border-radius:8px ;
   padding-left: 3px;
   padding-right: 3px;
   margin-left: 3px;
   text-align: center;
-  }
+  -webkit-border-radius:8px ;
+  -moz-border-radius:8px ;
+  -ms-border-radius:8px ;
+  -o-border-radius:8px ;
+}

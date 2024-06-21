@@ -22,8 +22,8 @@ function Home() {
       <div className='home text-white'>
         {/* header section */}
         <section className="">
-          <div className="py-5 mx-1 ">
-            <div className={`${styles.header} container position-relative `}>
+          <div className="pb-5 ">
+            <div className={`${styles.header} position-relative `}>
               <div className=" w-100 ">
                 <div className={`${styles.headInfo} w-75  p-1`}>
                   <h3 className='fs-2 w-50'>Flexible workspace solutions, simplified</h3>
