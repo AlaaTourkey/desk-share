@@ -12,7 +12,7 @@ function WorkSpace() {
 
     // to get id
     let { id } = useParams();
-
+    const [cover,setCover]=useState(null);
     const token = localStorage.getItem('workspaceToken');
     // Headers
     const headers = {
@@ -24,31 +24,31 @@ function WorkSpace() {
         try {
             let { data } = await axios.get(`https://desk-share-api.onrender.com/admin/workspaces/${id}`, { headers });
             setDetails(data);
+            setCover(data.cover);
         } catch (error) {
             console.log(error);
         }
     }
 
-    const [file, setFile] = useState(null);
-    const [fileUrl, setFileUrl] = useState(null);
-
     const handleChange = async (e) => {
         const selectedFile = e.target.files[0];
-        setFileUrl(URL.createObjectURL(selectedFile));
-        setFile(selectedFile);
+        // setFileUrl(URL.createObjectURL(selectedFile));
+        // setFile(selectedFile);
 
         const formData = new FormData();
-        formData.append('cover', selectedFile);
-
-        try {
-            let { data } = await axios.post(`https://desk-share-api.onrender.com/admin/workspaces/${id}/cover`, formData, {headers});
-            toast.success('Cover image uploaded successfully');
-            console.log(data);
-        } catch (error) {
-            console.log("error");
+        formData.append('file', selectedFile);
+        await axios.post(`https://desk-share-api.onrender.com/admin/workspaces/${id}/cover`, formData, {headers})
+        .then(res=>{
+            if(res.status===201){
+                console.log(res.data);
+                setCover(res.data.imgUrl);
+                toast.success('Cover image uploaded successfully');
+            }
+        }).catch(err=>{
+            console.log(err);
             toast.error('Error uploading the cover image.');
-        }
-    };
+        });
+    }
 
     useEffect(() => {
         getDetails();
@@ -60,7 +60,7 @@ function WorkSpace() {
             <div>
                 <img 
                     style={{ display: "block", width: "100%", height: "20rem", objectFit: "cover", objectPosition: "center top" }} 
-                    src={fileUrl || "/assets/dashboard/cover.png"} 
+                    src={cover || "/assets/dashboard/cover.png"} 
                     alt="Workspace cover" 
                     className='rounded-top' 
                 />
