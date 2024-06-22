@@ -1,0 +1,16 @@
+.error {
+    background-image: url('./error.png'); 
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto; 
+    border-radius: 15px;
+   
+  }
+  
+  

@@ -19,8 +19,8 @@
   }
   .cap {
     font-family: 'Open Sans' !important;
-    font-size: 75%;
-    width: 40%;
+    font-size: 95%;
+    width: 90%;
     color:rgba(255, 255, 255, 0.75);
 
   }
@@ -37,20 +37,21 @@
   
   .iconcontact .div {
     margin-left: 10px; 
+  
   }
   .iconh6{
     font-family: 'Abril Fatface' !important;
-    font-size: 15px; 
+    font-size: 25px; 
   }
   .iconp{
     font-family: 'Open Sans' !important;
-    font-size: 12px; 
+    font-size: 18px; 
     color: rgba(110, 110, 110, 1);
   
   }
   .iconsize{
   color:rgba(98, 146, 158, 1);
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   }
   .ICONN{
     color: rgba(218, 218, 218, 1);
@@ -80,10 +81,12 @@
     height:45px;
     margin-bottom: 2rem;
   }
+
   .pinfo{
     color: rgba(98, 146, 158, 1);
     font-family: 'Open Sans';
     font-weight: 500;
+    font-size: 25px;
   }
   .info h5{
     font-family: 'Abril Fatface' !important;
@@ -91,5 +94,6 @@
   .p2{
     color: rgba(110, 110, 110, 1);
     font-family: 'Open Sans';
-    font-size: 10px;
+    font-size: 15px;
+    width: 100%;
   }

@@ -46,10 +46,13 @@
 }
 
 .logo {
-  height: 100px;
-  width: 150px;
-}
+  width: 200px;
+  height:80px;
 
+}
+.div2{
+  margin-left: 2rem;
+}
 .footerp {
   color: rgba(255, 255, 255, 0.75);
   font-family: 'Open Sans';

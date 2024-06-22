@@ -56,8 +56,9 @@ export default function ContactUs() {
               <div className="div d-flex">
                 <img src={dotsmoke} className={styles.imgform} alt="" srcset="" />
               </div>
+    
               <p className={styles.pinfo}>tetap bersama kami</p>
-              <h5 >Contact Us</h5>
+              <h3>Contact Us</h3>
               <p className={styles.p2}>Jangan ragu untuk meminta konsultasi atau bertanya lansung saja hubungi kami </p>
 
               <div className={`iconcontact ${styles.iconcontact}`}>
@@ -79,8 +80,8 @@ export default function ContactUs() {
                 <div className={`div d-inline-block ${styles.div}`}>
                   <h6 className={styles.iconh6}>Telephone</h6>
                   <p className={styles.iconp}> ( +62 ) 123 456 789 </p>
+                  </div>
                 </div>
-              </div>
 
             </div>
 

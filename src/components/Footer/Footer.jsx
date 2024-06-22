@@ -33,12 +33,14 @@ export default function Footer() {
             <div className="col-lg-4 col-12">
               <div className="div">
                 <img src={logo} className={styles.logo} alt="" />
+                <div className={styles.div2}>
                 <p className={styles.footerp}>Aplikasi terbaik layanan penginapan di seluruh apartemen dan hotel di Indoensia</p>
                 <div className={styles.sitelinkss}>
                   <i class="fa-brands fa-facebook mx-1"></i>
                   <i class="fa-brands fa-twitter mx-1"></i>
                   <i class="fa-brands fa-instagram mx-1"></i>
                   <i class="fa-brands fa-pinterest mx-1"></i>
+                </div>
                 </div>
               </div>
             </div>
@@ -96,7 +98,8 @@ export default function Footer() {
         </div>
         <hr />
         <div className="div text-center py-2">
-          <p>&copy; Deskshare</p>
+          <p>Copyright &copy; 2024 deskshare | 
+Powered by desk share</p>
         </div>
       </div>
 

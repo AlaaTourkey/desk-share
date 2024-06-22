@@ -17,8 +17,9 @@ color: white !important;
 .nav-link.active{
 background-color:hsl(192, 24%, 50%) !important;
 border-radius:10px ;
-margin-left: 3px;
+margin-left: 2px;
 text-align: center;
+
 }
 
 .nav-label{

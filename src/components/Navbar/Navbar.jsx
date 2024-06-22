@@ -12,8 +12,6 @@ export default function Navbar({userData, setuserData}) {
     console.log("btn");
   };
   
-  
-
   function logout() {
     localStorage.removeItem('workspaceToken');
     setuserData(null);
@@ -32,16 +30,16 @@ export default function Navbar({userData, setuserData}) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav me-auto">
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-2 m-1" to="/home">Home</NavLink>
+                  <NavLink className="nav-link px-2 " to="/home">Home</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-2 m-1" to="/aboutus">About</NavLink>
+                  <NavLink className="nav-link px-2 " to="/aboutus">About</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-2 m-1" to="/blog">Blog</NavLink>
+                  <NavLink className="nav-link px-2 " to="/blog">Blog</NavLink>
                 </li>
                 <li className={`nav-item ${styles.item}`}>
-                  <NavLink className="nav-link px-2 m-1" to="/contactus">Contact Us</NavLink>
+                  <NavLink className="nav-link px-2 " to="/contactus">Contact Us</NavLink>
                 </li>
               </ul> 
               
