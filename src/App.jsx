@@ -40,11 +40,11 @@ export default function App() {
       element: <Masterlayout saveUserData={saveUserData} userData={userData} />,
       errorElement: <Notfound />,
       children: [
-        { path: '/', element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
-        { path: 'home', element: <ProtectedRoute userData={userData}><Home /></ProtectedRoute> },
-        { path: 'aboutus', element: <ProtectedRoute userData={userData}><About /></ProtectedRoute> },
-        { path: 'contactus', element: <ProtectedRoute userData={userData}><ContactUs /></ProtectedRoute> },
-        { path: 'blog', element: <ProtectedRoute userData={userData}><Blog /></ProtectedRoute> },
+        { path: '/', element: <Home /> },
+        { path: 'home', element: <Home /> },
+        { path: 'aboutus', element: <About /> },
+        { path: 'contactus', element: <ContactUs /> },
+        { path: 'blog', element: <Blog /> },
         { path: 'Workspaces', element: <ProtectedRoute ><AllWorkspaces /></ProtectedRoute> },
         { path: 'Signup', element: <Signup /> },
         { path: 'Login', element: <Login saveUserData={saveUserData} /> },
@@ -52,37 +52,34 @@ export default function App() {
     },
     {
       path: "DashBoardPage",
-      element: <ProtectedRoute>
-        <DashBoardPage></DashBoardPage>
-      </ProtectedRoute>,
+      element: <ProtectedRoute userData={userData}><DashBoardPage /></ProtectedRoute>,
       children: [
         {
           path: '',
-          element: <WorkspaceForm />
+          element: <ProtectedRoute userData={userData}><WorkspaceForm /></ProtectedRoute>
         },
         {
           path: "workspaces",
-          element: <AllWorkspaces/>
+          element: <ProtectedRoute userData={userData}><AllWorkspaces /></ProtectedRoute>
         },
         {
           path: "requests",
-          element: <Requests />
+          element: <ProtectedRoute userData={userData}><Requests /></ProtectedRoute>
         },
         {
           path: "addworkspace",
-          element: <WorkspaceForm />
+          element: <ProtectedRoute userData={userData}><WorkspaceForm /></ProtectedRoute>
         },
         {
           path: "Workspaces/:id",
-          element: <WorkSpace/>
-        },
+          element: <ProtectedRoute userData={userData}><WorkSpace /></ProtectedRoute>
+        }
       ]
     }
   ]);
 
   return (
     <div>
-
       <RouterProvider router={routes} />
       <Toaster />
     </div>

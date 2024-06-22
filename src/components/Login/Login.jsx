@@ -81,16 +81,16 @@ function Login({saveUserData}) {
                 <form onSubmit={formik.handleSubmit}>
 
                   <div className="mb-3">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" className="form-control" value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                    <label htmlFor="email">Email :</label>
+                    <input type="email" id="email" name="email" className="form-control mt-2" value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                     {formik.errors.email && formik.touched.email && (
                       <div className="alert alert-danger">{formik.errors.email}</div>
                     )}
                   </div>
 
                   <div className="mb-3">
-                    <label htmlFor="password">Password: </label>
-                    <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} type='password' name='password' id='password' className='form-control my-3' />
+                    <label  htmlFor="password">Password : </label>
+                    <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} type='password' name='password' id='password' className='form-control mt-2' />
                     {formik.errors.password && formik.touched.password ?
                       <div className="alert alert-danger">{formik.errors.password}</div> : " "}
 

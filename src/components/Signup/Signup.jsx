@@ -81,10 +81,10 @@ function Signup() {
             <div className="col-12 col-md-6 mt-5 p-3">
               <div className="">
                 <form onSubmit={formik.handleSubmit}>
-                  <div className="">
-                    <label htmlFor="name">Name:</label>
+                  <div className="mb-3">
+                    <label htmlFor="name">Name :</label>
                     <input
-                      type="text" id="name" name="name" className="form-control mb-3" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                      type="text" id="name" name="name" className="form-control my-2" value={formik.values.name} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                     {formik.errors.name && formik.touched.name && (
                       <div className="alert alert-danger">{formik.errors.name}</div>
                     )}
@@ -92,22 +92,22 @@ function Signup() {
 
 
                   <div className="mb-3">
-                    <label htmlFor="email">Email:</label>
-                    <input type="email" id="email" name="email" className="form-control" value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} />
+                    <label htmlFor="email">Email :</label>
+                    <input type="email" id="email" name="email" className="form-control my-2" value={formik.values.email} onChange={formik.handleChange} onBlur={formik.handleBlur} />
                     {formik.errors.email && formik.touched.email && (
                       <div className="alert alert-danger">{formik.errors.email}</div>
                     )}
                   </div>
 
                   <div className="mb-3">
-                    <label htmlFor="password">Password: </label>
-                    <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} type='password' name='password' id='password' className='form-control my-3' />
+                    <label htmlFor="password">Password : </label>
+                    <input type='password' name='password' id='password' className='form-control my-2 ' value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur}  />
                     {formik.errors.password && formik.touched.password ?
                       <div className="alert alert-danger">{formik.errors.password}</div> : " "}
 
                   </div>
 
-                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn`} >{isLoading ? <i class="fas fa-spinner spin   "></i> : "Register"}</button>
+                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn `} >{isLoading ? <i class="fas fa-spinner spin   "></i> : "Register"}</button>
 
                 </form>
               </div>

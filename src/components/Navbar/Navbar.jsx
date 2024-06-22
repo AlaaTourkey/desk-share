@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import logo from './Nav-images/logo.png';
-import styles from './Navbar.module.css'; 
+import styles from './Navbar.module.css';
 
 
-export default function Navbar({userData, setuserData}) {
+export default function Navbar({ userData, setuserData }) {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
     navigate('/DashBoardPage.jsx');
     console.log("btn");
   };
-  
+
+
+
   function logout() {
     localStorage.removeItem('workspaceToken');
     setuserData(null);
@@ -41,24 +43,25 @@ export default function Navbar({userData, setuserData}) {
                 <li className={`nav-item ${styles.item}`}>
                   <NavLink className="nav-link px-2 " to="/contactus">Contact Us</NavLink>
                 </li>
-              </ul> 
-              
-              <ul className="navbar-nav ms-auto">
-                <li className="nav-item ">
-                  <NavLink to='/DashBoardPage' type="button" className={`btn m-2   ${styles.buttonnav}`}> For WorkSpace</NavLink>
-                </li>
+              </ul>
 
-                {userData ? (
-                  <li>
-                    <NavLink onClick={logout} className="nav-link px-2 m-1" to="/">Logout</NavLink>
+              <ul className="navbar-nav ms-auto d-flex align-items-center">
+
+                {userData ? (<>
+                  <li className="nav-item ">
+                    <NavLink to='/DashBoardPage' type="button" className={`btn m-1   ${styles.buttonnav}`}> Dashboard</NavLink>
                   </li>
+                  <li>
+                    <NavLink onClick={logout} className="nav-link px-2  m-1" to="/">Logout</NavLink>
+                  </li>
+                </>
                 ) : (
                   <>
                     <li>
-                      <NavLink className="nav-link px-2 m-1" to="/login">Login</NavLink>
+                      <NavLink className="nav-link  m-1" to="/login">Login</NavLink>
                     </li>
                     <li>
-                      <NavLink className="nav-link px-2 m-1" to="/signup">Signup</NavLink>
+                      <NavLink className="nav-link   m-1" to="/signup">Signup</NavLink>
                     </li>
                   </>
                 )}

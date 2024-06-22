@@ -22,7 +22,6 @@ function AllWorkspaces() {
         }
       );
       console.log(data.workspaces);
-      console.log(data.workspaces);
       setWSpace(data.workspaces)
     } catch (error) {
       console.log(error);
@@ -39,7 +38,7 @@ function AllWorkspaces() {
       <div className='row p-5 my-5 g-3 '>
         {wSpace?.map((product) => (
           <div className="col-6 col-md-3   text-center text-capitalize" key={product._id}>
-            <div className="card" style={{ width: '18rem' }}>
+            <div className="card h-100" style={{ width: '18rem' }}>
               <img src={product.cover} alt="workSpace Cover" className="card-img-top rounded-3 w-100"  />
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#62939f" }}>{product.name}</h5>

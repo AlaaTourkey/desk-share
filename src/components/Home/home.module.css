@@ -14,7 +14,6 @@
   background-size: cover;
   background-position: center;
   height: 80vh;
-  width: 95%;
   margin: auto;
   padding: 1rem;
   border-radius: 15px;
@@ -32,16 +31,16 @@
 }
 
 .phone1 {
-  width: 30%;
-  top: 0;
+  width: 25%;
+  top: 3%;
   right: 29%;
   z-index: 99;
 }
 
 .phone2 {
-  width: 31%;
-  top: 0;
-  right: 5%;
+  width: 26%;
+  top: 3%;
+  right: 8%;
 }
 
 .two {
@@ -179,14 +178,14 @@
 
   .phone1 {
     width: 29% !important;
-    top: 4% !important;
+    top: 12% !important;
     right: 25% !important;
     z-index: 99;
   }
 
   .phone2 {
     width: 28% !important;
-    top: 10% !important;
+    top: 17% !important;
     right: 4% !important;
     
   }
