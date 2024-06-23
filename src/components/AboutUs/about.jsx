@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './about.module.css';
+import WOW from 'wowjs';
+import 'animate.css/animate.css';
 import dotsmoke from './about-images/dotsmoke.png';
 import video from './about-images/video.jpg';
 import cowork1 from './about-images/cowork1.png';
 import cowork2 from './about-images/cowork2.png';
 export default function About() {
+
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      boxClass: 'wow', // Class name for the elements to be animated
+      animateClass: 'animated', // Animation CSS class (default is animated)
+      offset: 0, // Viewport offset
+      mobile: true, // Enable animations on mobile devices
+      live: true // Live mode: updates the list of elements to animate when new ones are added
+    });
+    wow.init();
+  }, []);
+
   return (
     <div>
       <div className={styles['header']}>
@@ -21,13 +35,17 @@ export default function About() {
             <div className="col-md-6 position-relative my-5">
               <div className="">
                 <div className="position-relative">
-                  <img className={`${styles.one} w-75 pt-3 one`} src={cowork2} alt="cowork2" />
-                  <div className={`${styles.counter} position-absolute`}>
+                  {/* <img className={`${styles.one} w-75 pt-3 one`} src={cowork2} alt="cowork2" /> */}
+                  <img className={`${styles.one} w-75 pt-3 one  wow animate__bounceInLeft`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s" src={cowork2} alt="cowork1" />
+
+                  <div className={`${styles.counter} position-absolute wow animate__bounceInUp`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="0.5s">
                     <p className='fs-4 m-0'>99 <sup>%</sup></p>
                     <span className={styles.smallText}>Customer Suka</span>
                   </div>
                 </div>
-                <img className={`${styles.two} w-50 position-absolute two`} src={cowork1} alt="cowork1" />
+                {/* <img className={`${styles.two} w-50 position-absolute two`} src={cowork1} alt="cowork1" /> */}
+                <img className={`${styles.two} w-50 position-absolute two wow animate__bounceInRight`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s" src={cowork1} alt="cowork2" />
+
               </div>
             </div>
             <div className="col-md-6 desk">
@@ -60,7 +78,7 @@ export default function About() {
         <p className={styles.p1mission}>Layanan dan Tempat Apartemen Terbaik, Sesuai Impian Anda. Rasakan kenyamanan istimewa di hunian kami.</p>
         <div className='container'>
           <div className="row ">
-            <div className={`col-md-6  ${styles.vission}`}>
+            <div className={`col-md-6  ${styles.vission} wow animate__lightSpeedInLeft`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
               <div className={`py-5 ${styles.inner}`}>
                 <div className="div"></div>
                 <h4>Misi Kami</h4>
@@ -88,7 +106,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className={`col-md-6 ${styles.vission}`}>
+            <div className={`col-md-6 ${styles.vission} wow animate__lightSpeedInRight`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
               <div className={`${styles.inner} ${styles.vission1}`}>
                 <h5>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
@@ -151,10 +169,10 @@ export default function About() {
               <p className={styles.p5}>Kenapa harus gunakan layanan kami</p>
               <h3 className={styles.hstepwork}>Kami Memberikan Hasil Layanan Terbaik Untuk Apartemen Anda</h3>
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6  wow animate__zoomIn" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
                   <img src={video} className={styles.video} alt="" />
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6  wow animate__zoomIn" data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
                   <div className={`iconvideo ${styles.iconvideo}`}>
                     <i className={`fa-solid fa-shield-halved d-inline ${styles.iconsize}`}></i>
                     <div className={`div d-inline-block ${styles.div}`}>
@@ -179,7 +197,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className={`col-lg-3 col-12 my-3 ${styles.itemss}`}>
+            <div className={`col-lg-3 col-12 my-3 ${styles.itemss} wow animate__zoomIn`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
               <i className={`fa-solid fa-quote-left ${styles.ICONN}`}></i>
               <h5 className={styles.h5text}>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
               <p className={styles.plist}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>

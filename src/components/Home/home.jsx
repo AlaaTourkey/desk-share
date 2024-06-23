@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './home.module.css';
+import WOW from 'wowjs';
+import 'animate.css/animate.css';
 import cowork1 from '../../home images/cowork1.png';
 import cowork2 from '../../home images/cowork2.png';
 import dots from '../../home images/dots.png';
@@ -17,6 +19,18 @@ import gallery6 from '../../home images/gallery6.png'
 
 
 function Home() {
+  useEffect(() => {
+    const wow = new WOW.WOW({
+      boxClass: 'wow', // Class name for the elements to be animated
+      animateClass: 'animated', // Animation CSS class (default is animated)
+      offset: 0, // Viewport offset
+      mobile: true, // Enable animations on mobile devices
+      live: true // Live mode: updates the list of elements to animate when new ones are added
+    });
+    wow.init();
+  }, []);
+
+
   return (
     <>
       <div className='home text-white'>
@@ -31,8 +45,8 @@ function Home() {
                   <button className={`p-2 text-white ${styles.bgMain} ${styles.font} ${styles.btn} mt-5`}> Download The App </button>
                 </div>
                 <div className="">
-                  <img className={`${styles.phone1}   position-absolute`} src={phone1} alt="" />
-                  <img className={`${styles.phone2}  position-absolute`} src={phone2} alt="" />
+                  <img className={`${styles.phone1} vibrate-1  position-absolute`} src={phone1} alt="" />
+                  <img className={`${styles.phone2} vibrate-1 position-absolute`} src={phone2} alt="" />
                 </div>
               </div>
             </div>
@@ -42,7 +56,7 @@ function Home() {
 
         {/* section 2 */}
         <section>
-          <div className="secTwo my-5 py-5 ">
+          <div className="secTwo my-5 py-5  ">
             <div className="">
               <div className="info container my-2">
                 <div className="row">
@@ -69,17 +83,17 @@ function Home() {
                     </div>
                   </div>
                   <div className="col-6 col-lg-3">
-                    <div className="imgInfo rounded">
+                    <div className="imgInfo rounded wow animate__fadeInUp" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                       <img className='w-100' src={cowork1} alt="" />
                     </div>
                   </div>
                   <div className="col-6 col-lg-3">
-                    <div className="imgInfo rounded">
+                    <div className="imgInfo rounded wow animate__fadeInUp" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".6s">
                       <img className='w-100' src={photo3} alt="" />
                     </div>
                   </div>
                   <div className="col-6 col-lg-3">
-                    <div className="imgInfo rounded">
+                    <div className="imgInfo rounded wow animate__fadeInUp" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".7s">
                       <img className='w-100' src={photo4} alt="" />
                     </div>
                   </div>
@@ -97,13 +111,14 @@ function Home() {
               <div className="col-md-6 position-relative my-5">
                 <div className=" ">
                   <div className="position-relative ">
-                    <img className={`${styles.one} w-75 pt-3 one `} src={cowork1} alt="cowork1" />
-                    <div className={`${styles.counter} position-absolute`}>
+                    <img className={`${styles.one} w-75 pt-3 one  wow animate__bounceInLeft`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s" src={cowork1} alt="cowork1" />
+                    <div className={`${styles.counter} position-absolute wow animate__bounceInUp`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay="0.5s">
                       <p className='fs-4 m-0'>99 <sup>%</sup></p>
                       <span className={styles.smallText} >Customer Suka</span>
                     </div>
                   </div>
-                  <img className={`${styles.two} w-50 position-absolute two`} src={cowork2} alt="cowork2" />
+
+                  <img className={`${styles.two} w-50 position-absolute two wow animate__bounceInRight`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s" src={cowork2} alt="cowork2" />
                 </div>
               </div>
               <div className=" col-md-6 desk ">
@@ -176,22 +191,22 @@ function Home() {
             </div>
             <div className={`${styles.gallery} container w-75`}>
               <div className="row g-2 ">
-                <div className="col-5  item">
+                <div className="col-5  item wow animate__fadeInTopLeft" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100   ' src={gallery1} alt="" />
                 </div>
-                <div className="col-3 item">
+                <div className="col-3 item wow animate__fadeInTopLeft" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100 ' src={gallery2} alt="" />
                 </div>
-                <div className="col-4 item">
+                <div className="col-4 item wow animate__fadeInTopLeft" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100  ' src={gallery3} alt="" />
                 </div>
-                <div className="col-4 h-75">
+                <div className="col-4 h-75 wow animate__fadeInTopRight" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100 h-75' src={gallery4} alt="" />
                 </div>
-                <div className="col-4 h-75">
+                <div className="col-4 h-75 wow animate__fadeInTopRight" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100  h-75' src={gallery5} alt="" />
                 </div>
-                <div className="col-4 h-75">
+                <div className="col-4 h-75 wow animate__fadeInTopRight" data-wow-iteration="1" data-wow-duration="1s" data-wow-delay=".5s">
                   <img className='w-100  h-75' src={gallery6} alt="" />
                 </div>
               </div>
