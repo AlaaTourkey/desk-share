@@ -3,6 +3,8 @@ import styles from './Footer.module.css';
 import dotsmoke from './footer-images/dotsmoke.png';
 import logo from './footer-images/logo.png';
 import { Link } from 'react-router-dom';
+import WOW from 'wowjs';
+import 'animate.css/animate.css';
 export default function Footer() {
   return (
     <div>

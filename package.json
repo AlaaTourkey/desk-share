@@ -24,6 +24,8 @@
     "react-router-dom": "^6.22.3",
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
+    "wow": "^0.0.6",
+    "wow.js": "^1.2.2",
     "yup": "^1.4.0"
   },
   "scripts": {

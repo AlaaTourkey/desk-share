@@ -17,6 +17,8 @@ import WorkSpace from './components/Dashboard/WorkSpace.jsx';
 import Requests from './components/Dashboard/Requests.jsx';
 import WorkspaceForm from './components/Dashboard/WorkspaceForm.jsx';
 import AllWorkspaces from './components/Dashboard/AllWorkspaces.jsx';
+import WOW from 'wowjs';
+import 'animate.css/animate.css';
 export default function App() {
 
   useEffect(() => {
