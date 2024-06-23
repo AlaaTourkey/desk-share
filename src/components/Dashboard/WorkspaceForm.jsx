@@ -73,17 +73,19 @@ function WorkspaceForm() {
     });
 
     return (
-        <div className='p-4'>
+        <div className='p-4 row justify-content-center'>
             <h1>Register your Workspace</h1>
-            <form className='p-5 fs-6' onSubmit={formik.handleSubmit} >
+            <form className='p-2 fs-6 col-md-8 col-12' onSubmit={formik.handleSubmit} >
                 <div className='mb-2'>
-                    <label htmlFor="name" className="form-label p-2">workspace name</label>
-                    <input type="text" onChange={formik.handleChange} value={formik.values.name} name='name' id='name' className="form-control p-2 py-4 fs-6 border-2 border-info-subtle" placeholder='workspace name' />
+                    <label htmlFor="name" className="form-label p-2 fw-medium">workspace name</label>
+                    <input type="text" onChange={formik.handleChange} value={formik.values.name} name='name' id='name' className="bg-body-secondary form-control p-2 py-4 fs-6 " placeholder='workspace name'
+                    style={{border:"2px solid rgba(98, 147, 159, 0.3)"}} />
                 </div>
                 <div className="row mb-2">
                     <div className="col">
-                        <label htmlFor="country" key="defaultCountry" className="form-label p-2">Country</label>
-                        <select id="country" onChange={formik.handleChange} value={formik.values.country} name="country" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
+                        <label htmlFor="country" key="defaultCountry" className="form-label p-2 fw-medium">Country</label>
+                        <select id="country" onChange={formik.handleChange} value={formik.values.country} name="country" className="bg-body-secondary form-select p-2 py-3 fs-6"
+                        style={{border:"2px solid rgba(98, 147, 159, 0.3)"}}>
                             <option key="defaultCountry" hidden> Choose Your Country </option>
                             {countries?.map((item) => (
                                 <option key={item._id} value={item._id}>
@@ -94,8 +96,9 @@ function WorkspaceForm() {
                     </div>
 
                     <div className="col">
-                        <label htmlFor="city" key="defaultCity" className="form-label p-2">City</label>
-                        <select id="city" onChange={formik.handleChange} value={formik.values.city} name="city" className="form-select p-2 py-3 fs-6 border-2 border-info-subtle">
+                        <label htmlFor="city" key="defaultCity" className="form-label p-2 fw-medium">City</label>
+                        <select id="city" onChange={formik.handleChange} value={formik.values.city} name="city" className="bg-body-secondary form-select p-2 py-3 fs-6"
+                        style={{border:"2px solid rgba(98, 147, 159, 0.3)"}}>
                             <option key="defaultCity" hidden> Choose Your City </option>
                             {cities?.map((item) => (
                                 <option key={item._id} value={item._id}>
@@ -109,11 +112,13 @@ function WorkspaceForm() {
 
 
                 <div className='mb-3'>
-                    <label htmlFor="address" className="form-label p-2">workspace address</label>
-                    <input type="text" onChange={formik.handleChange} value={formik.values.address} name='address' id='address' className="form-control p-2 py-4 fs-6 border-2 border-info-subtle" placeholder='workspace address' />
+                    <label htmlFor="address" className="form-label p-2 fw-medium">workspace address</label>
+                    <input type="text" onChange={formik.handleChange} value={formik.values.address} name='address' id='address' className="bg-body-secondary form-control p-2 py-4 fs-6"
+                    style={{border:"2px solid rgba(98, 147, 159, 0.3)"}}
+                    placeholder='workspace address' />
                 </div>
                 <div className='d-flex justify-content-center'>
-                    <input type="submit" value="submit" className='btn fs-4 p-2' style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)", width: "200px" }} />
+                    <input type="submit" value="submit" className='btn fs-4 p-2' style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)", width: "200px",border:"2px solid rgba(98, 147, 159, 0.3)" }} />
                 </div>
             </form>
         </div>
