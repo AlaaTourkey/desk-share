@@ -10,7 +10,7 @@ import toast from 'react-hot-toast';
 import { date } from 'yup';
 
 
-function Login({saveUserData}) {
+function Login({ saveUserData }) {
 
   let navigate = useNavigate();
   const [error, setError] = useState(null);
@@ -18,35 +18,65 @@ function Login({saveUserData}) {
   const [workspaceToken, setWorkspaceToken] = useState(null);
 
   //  submitLogin function
+  // async function submitLogin(values) {
+  //   const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
+
+  //   setIsLoading(true)
+  //   let { data } = await axios.post(`https://desk-share-api.onrender.com/admin/login`, values, {
+  //     headers: {
+  //       'x-api-key': apiKey,
+  //       'Content-Type': 'application/json',
+  //     },
+  //   }).catch((error) =>
+  //     setError(error.response.data.error),
+  //     setIsLoading(false),
+  //   );
+  //   if (data.status == true) {
+  //     setIsLoading(false);
+  //     toast.success(data.message)
+  //     localStorage.setItem("workspaceToken", data.token);
+  //     saveUserData()
+  //     setWorkspaceToken(data.token)
+  //     navigate('/home')
+  //   }
+  // }
+
   async function submitLogin(values) {
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
-
-
-    let { data } = await axios.post(`https://desk-share-api.onrender.com/admin/login`, values, {
-      headers: {
-        'x-api-key': apiKey,
-        'Content-Type': 'application/json',
-      },
-    }).catch((error) =>
-      setError(error.response.data.error),
-      setIsLoading(false),
-    );
-    if (data.status == true) {
-        setIsLoading(false);
-        toast.success(data.message)
+  
+    setIsLoading(true);
+  
+    try {
+      const response = await axios.post(`https://desk-share-api.onrender.com/admin/login`, values, {
+        headers: {
+          'x-api-key': apiKey,
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      const data = response.data;
+  
+      if (data.status === true) {
+        toast.success(data.message);
         localStorage.setItem("workspaceToken", data.token);
-        saveUserData()
-        setWorkspaceToken(data.token)
-        navigate('/home')
+        saveUserData();
+        setWorkspaceToken(data.token);
+        navigate('/home');
+      } else {
+        setError(data.error); // Assuming error response structure has an 'error' field
+      }
+    } catch (error) {
+      setError(error.response.data.error); // Generic error message for unexpected errors
+    } finally {
+      setIsLoading(false); // Ensure isLoading is set to false after request completes
     }
   }
-
   
 
   let validateSchema = Yup.object({
     email: Yup.string().email('email is invalid').required('email is required'),
     password: Yup.string().matches(
-      /^(?=.*[A-Za-z])/,'Password should contain at least one uppercase or lowercase letter.')
+      /^(?=.*[A-Za-z])/, 'Password should contain at least one uppercase or lowercase letter.')
       .matches(
         /[A-Za-z\d@$!%*?&]{6,}/,
         'Password should consist of at least 6 characters.'
@@ -76,7 +106,7 @@ function Login({saveUserData}) {
             {error ? <div className="alert alert-danger h5 ">{error}</div> : null}
           </div>
           <div className="row">
-          <div className="col-12 col-md-6 mt-5 p-3">
+            <div className="col-12 col-md-6 mt-5 p-3">
               <div className="">
                 <form onSubmit={formik.handleSubmit}>
 
@@ -89,14 +119,24 @@ function Login({saveUserData}) {
                   </div>
 
                   <div className="mb-3">
-                    <label  htmlFor="password">Password : </label>
+                    <label htmlFor="password">Password : </label>
                     <input value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} type='password' name='password' id='password' className='form-control mt-2' />
                     {formik.errors.password && formik.touched.password ?
                       <div className="alert alert-danger">{formik.errors.password}</div> : " "}
 
                   </div>
 
-                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn`} >{isLoading ? <i class="fas fa-spinner spin   "></i> : "Login"}</button>
+                  {/* <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn`} >{isLoading ? <i className="fas fa-spinner fa-spin   "></i> : "Login"}</button> */}
+
+                  <button
+                    disabled={!(formik.isValid)}
+                    type="submit"
+                    className={`${styles.bgMain} btn`}
+                  >
+                    {isLoading ? <i className="fas fa-spinner fa-spin"></i> : "Login"}
+                  </button>
+
+
 
                 </form>
               </div>
@@ -107,7 +147,7 @@ function Login({saveUserData}) {
                 <img className={`${styles.phone2}  w-50`} src={phone2} alt="" />
               </div>
             </div>
-          
+
           </div>
         </div>
       </section>

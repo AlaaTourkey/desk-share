@@ -20,7 +20,7 @@ function Signup() {
   async function submitRegister(values) {
     const apiKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiQzJabXkwNktHNUplaU9qSWhQNUZOTkg2OVFoMGR6a0UifQ.pSRkGDcH0wpkGP1GetT02mLStF6KUBIr9Iq4B9cvzR8';
 
-
+    setIsLoading(true)
     let { data } = await axios.post(`https://desk-share-api.onrender.com/admin/signup`, values, {
       headers: {
         'x-api-key': apiKey,
@@ -29,14 +29,16 @@ function Signup() {
     })
     console.log(data);
     if (data.status == "true") {
-      navigate('/Login')
       console.log("sucesssss");
       toast.success(data.message)
+      setIsLoading(false)
+      navigate('/Login')
+      
     }else{
+      setIsLoading(false)
       toast(data.message)
       setError(data.errors.email);
     }
-
   }
 
   let validateSchema = Yup.object({
@@ -107,7 +109,7 @@ function Signup() {
 
                   </div>
 
-                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn `} >{isLoading ? <i class="fas fa-spinner spin   "></i> : "Register"}</button>
+                  <button disabled={!(formik.isValid)} type='submit' className={` ${styles.bgMain} btn `} >{isLoading ? <i class="fas fa-spinner fa-spin   "></i> : "Register"}</button>
 
                 </form>
               </div>
