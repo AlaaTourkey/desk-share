@@ -78,7 +78,7 @@ export default function About() {
         <p className={styles.p1mission}>Layanan dan Tempat Apartemen Terbaik, Sesuai Impian Anda. Rasakan kenyamanan istimewa di hunian kami.</p>
         <div className='container'>
           <div className="row ">
-            <div className={`col-md-6  ${styles.vission} wow animate__lightSpeedInLeft`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
+            <div className={`col-md-6  ${styles.vission} `} >
               <div className={`py-5 ${styles.inner}`}>
                 <div className="div"></div>
                 <h4>Misi Kami</h4>
@@ -106,7 +106,7 @@ export default function About() {
                 </div>
               </div>
             </div>
-            <div className={`col-md-6 ${styles.vission} wow animate__lightSpeedInRight`} data-wow-iteration="1" data-wow-duration="2s" data-wow-delay=".5s">
+            <div className={`col-md-6 ${styles.vission} `} >
               <div className={`${styles.inner} ${styles.vission1}`}>
                 <h5>“ Lorem ipsum dolor sit amet consectetur adipsing elit. “</h5>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
