@@ -68,7 +68,7 @@ function Home() {
                   </div>
                   <div className="col-md-6 d-flex align-items-center justify-content-end ">
                     <div className={`${styles.Deskshare} ${styles.lightColor} d-flex align-items-baseline`}>
-                      <p>Lihat selengkapnya </p>
+                      <p>About Us page </p>
                       <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i>
                     </div>
                   </div>
@@ -171,8 +171,8 @@ function Home() {
               </div>
             </div>
             <div className=" text-center mt-5 ">
-              <span className={`${styles.Deskshare} `}>Lihat seluruh layanan</span>
-              <span className={`${styles.Deskshare} ${styles.lightColor} ms-1`}> Lihat selengkapnya <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></span>
+              <span className={`${styles.Deskshare} `}>Know more about us here</span>
+              <span className={`${styles.Deskshare} ${styles.lightColor} ms-1`}> About Us page <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></span>
             </div>
           </div>
         </section>
@@ -182,8 +182,8 @@ function Home() {
           <div className="container py-5">
             <div className="head my-3 text-center d-flex justify-content-evenly">
               <div className="">
-                <h6>Galeri ruangan apartemen terbaik</h6>
-                <h2>Galeri Apartemen Di Indonesia</h2>
+                <h6>Flexible workspace solutions, simplified</h6>
+                <h2>Explore more about our solutions</h2>
               </div>
               <div className="">
                 <img src={dots} alt="" />
@@ -212,8 +212,8 @@ function Home() {
               </div>
             </div>
             <div className=" text-center mt-5 ">
-              <span className={`${styles.Deskshare} `}>Lihat seluruh layanan</span>
-              <span className={`${styles.Deskshare} ${styles.lightColor} ms-1`}> Lihat selengkapnya <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></span>
+              <span className={`${styles.Deskshare} `}>Know more about us here</span>
+              <span className={`${styles.Deskshare} ${styles.lightColor} ms-1`}> About Us page <i className="fa fa-arrow-right mx-2" aria-hidden="true"></i></span>
             </div>
           </div>
         </section>
