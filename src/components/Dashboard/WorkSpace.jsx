@@ -61,22 +61,29 @@ function WorkSpace() {
             {details ? <div className='p-2'>
                 <div>
                     <img
-                        style={{ display: "block", width: "100%", height: "20rem", objectFit: "cover", objectPosition: "center top" }}
+                        style={{ display: "block", width: "100%", height: "30rem", objectFit: "cover", objectPosition: "center center"}}
                         src={cover || "/assets/dashboard/cover.png"}
                         alt="Workspace cover"
-                        className='rounded-top'
+                        className='rounded-5'
                     />
                 </div>
-                <div className='d-flex justify-content-end my-3'>
+                <div className='d-flex justify-content-between my-3'>
+                <div>
+                        <h1>{details?.name}</h1>
+                        <div style={{ color: "#62939f" }} className='fs-5 d-flex gap-2 align-items-center'>
+                            <FontAwesomeIcon icon={faLocationDot} size="lg" />
+                            <span>{details?.address}, {details?.city?.name}, {details?.country?.name}</span>
+                        </div>
+                    </div>
                     <label
                         className='btn p-4 py-3 fs-6 d-flex justify-content-start align-items-center gap-2 rounded-3'
-                        style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)" }}>
+                        style={{ color: "#62939f", backgroundColor: "rgba(98, 147, 159, 0.3)",height:"fit-content" }}>
                         <FontAwesomeIcon icon={faUpload} size="lg" />
                         <span>Choose Cover</span>
                         <input type="file" onChange={handleChange} style={{ display: 'none' }} />
                     </label>
                 </div>
-                <div className='row'>
+                {/* <div className='row'>
                     <div className="col col-12">
                         <h1>{details?.name}</h1>
                         <div style={{ color: "#62939f" }} className='fs-5 d-flex gap-2 align-items-center'>
@@ -84,20 +91,20 @@ function WorkSpace() {
                             <span>{details?.address}, {details?.city?.name}, {details?.country?.name}</span>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 <div className="container">
                     <div className="row my-5 text-center">
                         <div className="col-md-3">
-                            <img className='w-100' src={img} alt="Workspace" />
+                            <img className='w-100 rounded-5' src={img} alt="Workspace" />
                         </div>
                         <div className="col-md-3">
-                            <img className='w-100' src={img} alt="Workspace" />
+                            <img className='w-100 rounded-5' src={img} alt="Workspace" />
                         </div>
                         <div className="col-md-3">
-                            <img className='w-100' src={img} alt="Workspace" />
+                            <img className='w-100 rounded-5' src={img} alt="Workspace" />
                         </div>
                         <div className="col-md-3">
-                            <img className='w-100' src={img} alt="Workspace" />
+                            <img className='w-100 rounded-5' src={img} alt="Workspace" />
                         </div>
                     </div>
                 </div>

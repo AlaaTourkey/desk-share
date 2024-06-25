@@ -10,7 +10,7 @@ function Blog() {
             }}>
                 <div className="container">
                     <h1 className='text-center mb-4 text-white'>Our Newsroom</h1>
-                    <div className=' px-4 '>
+                    {/* <div className=' px-4 '>
                         <form>
                             <div className="row rounded p-1 bg-white justify-content-between align-items-center">
                                 <div class="col-md-10 col-8 p-0">
@@ -21,7 +21,7 @@ function Blog() {
                                 </div>
                             </div>
                         </form>
-                    </div>
+                    </div> */}
                 </div>
             </section>
             <div className="container">
@@ -29,7 +29,7 @@ function Blog() {
                     <div className='card shadow-sm mb-5 bg-transparent rounded border-0 shadow-lg p-0 overflow-hidden'>
                         <div className="row g-0 ">
                             <div className="col-md-6">
-                                <img src="/assets/blog images/images/featured.png" class="img-fluid rounded-start border border-0" alt="..." style={{ height: "100%", objectFit: "cover" }} />
+                                <img src="/assets/blog images/images/future.jpg" class="img-fluid rounded-start border border-0" alt="..." style={{ height: "100%", objectFit: "cover" }} />
                             </div>
                             <div className="col-md-6 text-start p-4 bg-white">
                                 <div className="card-body ">
@@ -38,7 +38,7 @@ function Blog() {
                                     </div>
                                     <div className="card-text mb-4">
                                         <h2 style={{ color: "#183B56" }}>
-                                            Cheap Airline Tickets Great Ways To Save
+                                        The Future of Work: Embracing Flexibility with DeskShare
                                         </h2>
                                     </div>
                                     <div className="card-text mb-4">
@@ -63,13 +63,14 @@ function Blog() {
                     <div className='row'>
                         <div className="col-md-6 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/Image 2.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/boost.jpg" className="card-img" alt="..."
+                                style={{ height: "100%", objectFit: "cover",aspectRatio: "1/1" }} />
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">How to prevent and protect your family from Carbon monoxide</p>
+                                        <p className="card-text fs-4 fw-bold">Boost Productivity: Why DeskShare is Your Ultimate Workspace Solution</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -77,13 +78,14 @@ function Blog() {
                         </div>
                         <div className="col-md-6 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/Image 3.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/articles.jpg" className="card-img" alt="..." 
+                                style={{ height: "100%", objectFit: "cover",aspectRatio: "1/1" }}/>
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">From Startups to Solopreneurs: How DeskShare Supports Every Business</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -104,13 +106,14 @@ function Blog() {
                     <div className='row'>
                         <div className="col-md-4 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/Base.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/Base.png" className="card-img" alt="..."
+                                style={{ height: "100%",aspectRatio: "1/1", objectFit: "cover" }} />
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">How to prevent and protect your family from Carbon monoxide</p>
+                                        <p className="card-text fs-4 fw-bold">Unlock Creativity: Transform Your Workspace with DeskShare</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -118,27 +121,29 @@ function Blog() {
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/Base 2.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/Base 2.png" className="card-img" alt="..."
+                                style={{ height: "100%",aspectRatio: "1/1", objectFit: "cover" }} />
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">Finding Your Perfect Space: Exploring DeskShare's Versatile Options</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div className="col-md-4 mb-4">
-                            <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/Base 3.png" className="card-img" alt="..." />
+                            <div className="card text-white border border-0 overflow-hidden">
+                                <img src="/assets/blog images/images/collaboration.jpg" className="card-img" alt="..." 
+                                style={{ height: "100%",aspectRatio: "1/1", objectFit: "cover" }}/>
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">Collaborate Better: Networking Opportunities on DeskShare</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -156,10 +161,10 @@ function Blog() {
                             <button type="button" className="btn btn-outline-primary">View all</button>
                         </div>
                     </div>
-                    <div className='card shadow-sm mb-5 bg-body-tertiary rounded border-0 shadow-lg p-0'>
+                    <div className='card shadow-sm mb-5 bg-body-tertiary rounded border-0 shadow-lg p-0 overflow-hidden'>
                         <div className="row g-0">
                             <div className="col-md-6">
-                                <img src="/assets/blog images/images/case studies.png" class="img-fluid border border-0" alt="..."
+                                <img src="/assets/blog images/images/case studies.jpg" class="img-fluid border border-0" alt="..."
                                     style={{ height: "100%", objectFit: "cover" }} />
                             </div>
                             <div className="col-md-6 text-start p-4">
@@ -169,7 +174,7 @@ function Blog() {
                                     </div>
                                     <div className="card-text mb-4">
                                         <h2 style={{ color: "#183B56" }}>
-                                            Cheap Airline Tickets Great Ways To Save
+                                        Tailored Spaces: Customizing Your Experience with DeskShare
                                         </h2>
                                     </div>
                                     <div className="card-text mb-4">
@@ -191,13 +196,13 @@ function Blog() {
                     <div className='row mb-4'>
                         <div className="col-md-6 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/articles.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/articles.jpg" className="card-img" alt="..." style={{aspectRatio: "1/1", objectFit: "cover"}}/>
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">How to prevent and protect your family from Carbon monoxide</p>
+                                        <p className="card-text fs-4 fw-bold">Why Choose DeskShare? Benefits of Joining Our Growing Community</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -205,13 +210,14 @@ function Blog() {
                         </div>
                         <div className="col-md-6 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/articles 2.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/articles 2.jpg" className="card-img" alt="..."
+                                style={{aspectRatio: "1/1", objectFit: "cover"}} />
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">Navigating Change: Adapting Work Environments with DeskShare</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -227,7 +233,7 @@ function Blog() {
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">How to prevent and protect your family from Carbon monoxide</p>
+                                        <p className="card-text fs-4 fw-bold">Success Stories: How DeskShare Empowers Businesses and Individuals</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -241,7 +247,7 @@ function Blog() {
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">Beyond the Office: Exploring Campus Life with DeskShare</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -249,13 +255,13 @@ function Blog() {
                         </div>
                         <div className="col-md-4 mb-4">
                             <div className="card text-white border border-0">
-                                <img src="/assets/blog images/images/articles 5.png" className="card-img" alt="..." />
+                                <img src="/assets/blog images/images/articles 5.png" className="card-img" alt="..."/>
                                 <div className="card-img-overlay d-flex flex-column justify-content-between text-start p-4 gradient-background">
                                     <p className="card-title">
                                         <span className='bg-white text-center p-2 rounded rounded-pill text-success fs-6'>FEATURED</span>
                                     </p>
                                     <div className='row '>
-                                        <p className="card-text fs-4 fw-bold">Motherhood is the hardest and the best job ever</p>
+                                        <p className="card-text fs-4 fw-bold">Join the Movement: Innovation in Workspace Management with DeskShare</p>
                                         <p className="card-text"><small>Last updated 3 mins ago</small></p>
                                     </div>
                                 </div>
@@ -277,7 +283,7 @@ function Blog() {
                                     <input type="text" className="form-control p-3 border-0 ps-4" placeholder='Your Email' />
                                 </div>
                                 <div className="col-4 p-0">
-                                    <input type="submit" value="Get started" className='form-control text-white btn p-3 fw-medium' style={{ backgroundColor: "#83BFCE" }} />
+                                    <input type="button" value="Get started" className='form-control text-white btn p-3 fw-medium' style={{ backgroundColor: "#83BFCE" }} />
                                 </div>
                             </form>
                             <p style={{ color: "#5A7184" }}>Get a response tomorrow if you submit by 9pm today. If we received after 9pm will get a reponse the following day.</p>
